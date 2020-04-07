@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Home from './components/Home';
+import Clients from './components/Clients';
 
 import './style/App.scss';
 
@@ -15,6 +16,9 @@ export default () => (
         </Link>
       </header>
       <Switch>
+        <Route exact path="/clients">
+          <Clients />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
