@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Home from './components/Home';
 import Clients from './components/Clients';
+import Providers from './components/Providers';
 
 import './style/App.scss';
 
@@ -18,6 +19,9 @@ export default () => (
       <Switch>
         <Route exact path="/clients">
           <Clients />
+        </Route>
+        <Route exact path="/providers">
+          <Providers />
         </Route>
         <Route path="/">
           <Home />
