@@ -2,7 +2,9 @@
 
 ## Front-end
 
-Made in React
+Made in React.
+
+How does this work section for both clients and providers.
 
 ### For clients
 
@@ -35,3 +37,11 @@ NodeJS/Express API
 
 - SMS verification code submission
 - Phone call forwarding
+
+## To-Do
+
+- Mobile sizes
+
+## Potentially
+
+- Classify calls and providers by topic and language
