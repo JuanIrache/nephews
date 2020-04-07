@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  header {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .chooser {
+    flex: 1;
+    display: flex;
+    div {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .clients {
+      border-right: 1px solid black;
+    }
+  }
+}
