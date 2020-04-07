@@ -8,7 +8,7 @@ export default () => (
       <p>
         <strong>nebots</strong> és un portal que permet a les persones poc
         acostumades a la tecnologia fer consultes telefòniques amb voluntaris
-        que en saben més.
+        (nebots) que en saben més.
       </p>
       <p>Per exemple </p>
       <ul>
@@ -20,7 +20,7 @@ export default () => (
         Els voluntaris que tinguin temps es poden inscriure i rebran una
         notificació quan algú necessiti assistència. Si en aquell moment poden
         atendre la trucada, només han d'obrir la notificació i la trucada els
-        serà redirigida.
+        serà redirigida al seu telèfon.
       </p>
     </div>
   </div>
