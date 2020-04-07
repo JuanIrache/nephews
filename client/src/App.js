@@ -5,24 +5,20 @@ import Home from './components/Home';
 
 import './style/App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <header>
-          <Link to="/">
-            <h1>nebots</h1>
-            <h2>assistència tècnica general</h2>
-          </Link>
-        </header>
-        <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  );
-}
-
-export default App;
+export default () => (
+  <div className="App">
+    <Router>
+      <header>
+        <Link to="/">
+          <h1>nebots</h1>
+          <h2>assistència tècnica general</h2>
+        </Link>
+      </header>
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  </div>
+);
