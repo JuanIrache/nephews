@@ -6,7 +6,7 @@ import '../style/Home.scss';
 export default () => (
   <div className="Home">
     <Link to="/clients">
-      <p>Necessito ajuda</p>
+      <p>Necessito ajuda amb la tecnologia</p>
     </Link>
     <Link to="/providers">
       <p>Vull ajudar</p>
