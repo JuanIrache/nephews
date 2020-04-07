@@ -1,4 +1,8 @@
+@import './variables.scss';
+
 .App {
+  background-color: $light;
+  color: $dark;
   display: flex;
   flex-direction: column-reverse;
   height: 100%;
@@ -19,7 +23,7 @@
       font-weight: bold;
     }
     .clients {
-      border-right: 1px solid black;
+      border-right: 1px solid $dark;
     }
   }
 }
