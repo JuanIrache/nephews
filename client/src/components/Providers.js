@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../style/Providers.scss';
 
@@ -27,5 +28,8 @@ export default () => (
       </label>
       <input type="button" value="Registrar" />
     </form>
+    <Link to="/About">
+      <h4>Com funciona?</h4>
+    </Link>
   </div>
 );
