@@ -41,6 +41,7 @@ NodeJS/Express API
 ## To-Do
 
 - Mobile sizes
+- Add terms and conditions
 
 ## Potentially
 
