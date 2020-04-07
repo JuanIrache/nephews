@@ -26,7 +26,7 @@ export default () => (
         <input type="checkbox" name="conditions" required /> Acceptes les
         condicions d'ús?
       </label>
-      <input type="button" value="Registrar" />
+      <input type="submit" value="Registrar" />
     </form>
     <Link to="/About">
       <h4>Com funciona?</h4>
