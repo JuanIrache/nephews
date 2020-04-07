@@ -15,7 +15,14 @@
     }
   }
   header {
-    font-size: 2rem;
     text-align: center;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 1rem;
+      margin-top: 0;
+    }
   }
 }

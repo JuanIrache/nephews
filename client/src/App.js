@@ -12,6 +12,7 @@ function App() {
         <header>
           <Link to="/">
             <h1>nebots</h1>
+            <h2>assistència tècnica general</h2>
           </Link>
         </header>
         <Switch>
