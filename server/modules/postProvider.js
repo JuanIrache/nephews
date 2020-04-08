@@ -29,14 +29,11 @@ module.exports = async (req, res) => {
         phone,
         validateKey
       });
-      console.log(
-        `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}/validate/${validateKey}`
-      );
-      //   twilio.messages.create({
-      //     body: `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}/validate/${validateKey}`,
-      //     from: NEBOTS_TWFROM,
-      //     to: phone
-      //   });
+      twilio.messages.create({
+        body: `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}/validate/${validateKey}`,
+        from: NEBOTS_TWFROM,
+        to: phone
+      });
     } catch (error) {
       console.log(error);
       return res.sendStatus(500);

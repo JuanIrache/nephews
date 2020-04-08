@@ -45,14 +45,16 @@ const corsOptions =
       }
     : null;
 
-app.get('/provider/:id/validate/:key', cors(corsOptions), validateProvider);
-
-// enable pre-flight request
+// Enable pre-flight request
 app.options('/provider', cors());
 
+// Validate provider
+app.get('/provider/:id/validate/:key', cors(corsOptions), validateProvider);
+
+// Add provider
 app.post('/provider', cors(), postProvider);
 
-//Check status
+//Check server status
 app.get('/ping', cors(corsOptions), ping);
 
 app.listen(NEBOTS_PORT, () =>
