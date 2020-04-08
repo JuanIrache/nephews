@@ -4,21 +4,21 @@
 
 Made in React.
 
-How does this work section for both clients and providers.
+- How does this work section for (both clients and providers).
 
 ### For clients
 
-A simple phone number they can call to for basic general tech support. Problems like the tv channels missing, the Internet not working, not being able to send or open an email, not knowing how to take a photo...
+- A simple phone number they can call to for basic general tech support. Problems like the tv channels missing, the Internet not working, not being able to send or open an email, not knowing how to take a photo...
 
 ### For providers
 
-A signup form with a phone number input.
+- A signup form with a phone number input.
 
 Phone numbers will be verified via SMS before accounts are confirmed.
 
-A call confirmation page submits a /call PUT request to accept a call when a provider clicks on an SMS notification.
+When a call arrives, the provider receives an SMS with a link to accept the call if available.
 
-A provider delete form verifies the phone again before submitting a DELETE request.
+- A provider delete form, also verified by SMS.
 
 ## Back-end
 
