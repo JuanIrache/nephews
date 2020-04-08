@@ -39,11 +39,14 @@ NodeJS/Express API
 
 ## To-Do
 
+- Different colors for links vs normal text
+- Create delete provider page
 - Set environment variables
+- Handle cors
 - Assign secure url to server
 - Mobile sizes
 - Add terms and conditions
-
-## Potentially
-
+- Protect from brute force
+- Protect from smsing/calling expensive numbers
+- Authenticate webhook endpoint
 - Classify calls and providers by topic and language
