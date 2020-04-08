@@ -1,4 +1,6 @@
 const { VoiceResponse } = require('twilio').twiml;
+const { v4: uuidv4 } = require('uuid');
+
 const Call = require('../models/Call');
 const Provider = require('../models/Provider');
 
@@ -18,26 +20,40 @@ module.exports = async (req, res) => {
 
   try {
     // Use letters only key for better SMS link funcitonality
-    // let validateKey = uuidv4().replace(/[0-9\-]/g, '');
-    // while (validateKey.length < 8) {
-    //   validateKey = uuidv4().replace(/[0-9\-]/g, '');
-    // }
+    let validateKey = uuidv4().replace(/[0-9\-]/g, '');
+    while (validateKey.length < 8) {
+      validateKey = uuidv4().replace(/[0-9\-]/g, '');
+    }
 
-    // await Call.create({ validateKey });
+    // Create letters-only unique ID
+    let _id = uuidv4().replace(/[0-9\-]/g, '');
+    while (validateKey.length < 8 || (await Provider.findOne({ _id }))) {
+      _id = uuidv4().replace(/[0-9\-]/g, '');
+    }
+
+    // CallSid is the call identifier on Twilio's end
+    const callSid = req.body.CallSid;
+
+    // Delete if already existing
+    await Call.deleteOne({ callSid }).exec();
+
+    await Call.create({ _id, validateKey, callSid });
 
     // Send sms to providers
-    const body = `Nebot, una persona necessita la teva ajuda. Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/provider/`;
-
-    //   console.log(body);
 
     providers = await Provider.find({}).exec();
 
     for (const provider of providers) {
-      sms.messages.create({
-        body,
-        from: NEBOTS_TWFROM,
-        to: provider.phone
-      });
+      const body = `Hola ${provider.name}, una persona necessita la teva ajuda. Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/call/${_id}/provider/${provider._id}/key/${validateKey}`;
+      console.log(body);
+      //   sms.messages
+      //     .create({
+      //       body,
+      //       from: NEBOTS_TWFROM,
+      //       to: provider.phone
+      //     })
+      //     .catch(console.error);
+      // To-Do respond 500 if one crash?
     }
 
     // Prepare response for Twilio

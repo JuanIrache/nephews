@@ -50,11 +50,16 @@ module.exports = async (req, res) => {
 
       //   console.log(body);
 
-      sms.messages.create({
-        body,
-        from: NEBOTS_TWFROM,
-        to: phone
-      });
+      sms.messages
+        .create({
+          body,
+          from: NEBOTS_TWFROM,
+          to: phone
+        })
+        .catch(err => {
+          console.error(err);
+          return res.sendStatus(500);
+        });
     } catch (error) {
       console.log(error);
       return res.sendStatus(500);
