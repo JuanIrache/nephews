@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 
 const postProvider = require('./modules/postProvider');
 const postCall = require('./modules/postCall');
-const validateProvider = require('./modules/validateProvider');
-const confirmCall = require('./modules/confirmCall');
+const getProvider = require('./modules/getProvider');
+const getCall = require('./modules/getCall');
 const ping = require('./modules/ping');
 
 require('dotenv').config();
@@ -57,17 +57,13 @@ app.options('/provider', cors());
 app.post('/provider', cors(), postProvider);
 
 // Validate provider
-app.get('/provider/:id/validate/:key', cors(corsOptions), validateProvider);
+app.get('/provider/:id', cors(corsOptions), getProvider);
 
 // Add call
 app.post('/call', cors(), postCall);
 
 // Confirm call
-app.get(
-  '/call/:id/provider/:providerId/key/:key',
-  cors(corsOptions),
-  confirmCall
-);
+app.get('/call/:id', cors(corsOptions), getCall);
 
 //Check server status
 app.get('/ping', cors(corsOptions), ping);

@@ -46,7 +46,7 @@ module.exports = async (req, res) => {
         valid: false
       });
 
-      const body = `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}/validate/${validateKey}`;
+      const body = `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}?action=validate`;
 
       tw.messages
         .create({

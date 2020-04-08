@@ -42,7 +42,7 @@ module.exports = async (req, res) => {
     providers = await Provider.find({ valid: true }).exec();
 
     for (const provider of providers) {
-      const body = `Hola ${provider.name}, una persona necessita la teva ajuda. Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/call/${_id}/provider/${provider._id}/key/${validateKey}`;
+      const body = `Hola ${provider.name}, una persona necessita la teva ajuda. Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/call/${_id}?provider=${provider._id}`;
 
       tw.messages
         .create({
