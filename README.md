@@ -39,6 +39,7 @@ NodeJS/Express API
 
 ## To-Do
 
+- Warning "overseas numbers while testing"
 - Different colors for links vs normal text
 - Create delete provider page
 - Set environment variables
