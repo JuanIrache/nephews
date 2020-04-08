@@ -22,6 +22,12 @@ export default () => (
         atendre la trucada, només han d'obrir la notificació i la trucada els
         serà redirigida al seu telèfon.
       </p>
+      <p>
+        No cal ser un expert informàtic. Només tenir per la mà els aparells
+        habituals de cada dia. És més o menys l'ajuda que ja doneu amb el mòbil
+        o la televisió als vostres pares o tietes, però per a gent que no té...
+        nebots.
+      </p>
     </div>
   </div>
 );
