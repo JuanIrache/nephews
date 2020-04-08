@@ -13,11 +13,9 @@ const {
   NEBOTS_SERVER
 } = process.env;
 
-const sms = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
+const tw = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
 
 module.exports = async (req, res) => {
-  console.log(req.body);
-
   try {
     // Use letters only key for better SMS link funcitonality
     let validateKey = uuidv4().replace(/[0-9\-]/g, '');
@@ -41,19 +39,20 @@ module.exports = async (req, res) => {
 
     // Send sms to providers
 
-    providers = await Provider.find({}).exec();
+    providers = await Provider.find({ valid: true }).exec();
 
     for (const provider of providers) {
       const body = `Hola ${provider.name}, una persona necessita la teva ajuda. Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/call/${_id}/provider/${provider._id}/key/${validateKey}`;
-      console.log(body);
-      //   sms.messages
-      //     .create({
-      //       body,
-      //       from: NEBOTS_TWFROM,
-      //       to: provider.phone
-      //     })
-      //     .catch(console.error);
-      // To-Do respond 500 if one crash?
+
+      tw.messages
+        .create({
+          body,
+          from: NEBOTS_TWFROM,
+          to: provider.phone
+        })
+        .catch(console.error);
+
+      //   To-Do respond 500 if one crash?
     }
 
     // Prepare response for Twilio

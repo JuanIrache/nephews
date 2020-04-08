@@ -11,7 +11,7 @@ const {
   NEBOTS_SERVER
 } = process.env;
 
-const sms = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
+const tw = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
 
 module.exports = async (req, res) => {
   let { name, lastName, phone } = req.body || {};
@@ -48,9 +48,7 @@ module.exports = async (req, res) => {
 
       const body = `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}/validate/${validateKey}`;
 
-      //   console.log(body);
-
-      sms.messages
+      tw.messages
         .create({
           body,
           from: NEBOTS_TWFROM,
@@ -61,7 +59,7 @@ module.exports = async (req, res) => {
           return res.sendStatus(500);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return res.sendStatus(500);
     }
 
