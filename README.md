@@ -4,7 +4,7 @@
 
 Made in React.
 
-- How does this work section for (both clients and providers).
+- "How does this work?" section for (both clients and providers).
 
 ### For clients
 
