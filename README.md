@@ -16,9 +16,7 @@ A signup form with a phone number input.
 
 Phone numbers will be verified via SMS before accounts are confirmed.
 
-They will also be required to accept notifications on their browser.
-
-A call confirmation page submits a /call PUT request to accept a call when a provider clicks on a notification.
+A call confirmation page submits a /call PUT request to accept a call when a provider clicks on an SMS notification.
 
 A provider delete form verifies the phone again before submitting a DELETE request.
 
@@ -30,7 +28,7 @@ NodeJS/Express API
 - /provider/id PUT Verifies providers by validating the SMS or starts the delete process
 - /provider/id DELETE Verifies the deletion confirmation code and deletes the provider
 
-- /call POST Creates a call element and pushes a notification to all providers
+- /call POST Creates a call element and pushes an SMS notification to all providers
 - /call/id PUT Accepts the call and forwards the specific phone call from the client to the provider
 - /call/id DELETE Deletes the call element
 
