@@ -50,11 +50,18 @@ const corsOptions =
       }
     : null;
 
-app.get('/provider/:id', cors(corsOptions), async (req, res) => {
+app.get('/provider/:id/validate/:key', cors(corsOptions), async (req, res) => {
   const provider = await Provider.findOne({
-    'payments.downloadKey': req.params.id
+    _id: req.params.id,
+    validateKey: req.params.key
   }).exec();
-  return res.status(200).send('<h1>To Do</h1>');
+  if (provider) {
+    provider.valid = true;
+    await provider.save();
+    return res.status(200).send('<h1>Compte validat correctament</h1>');
+  } else {
+    return res.status(400).send('<h1>Alguna cosa ha anat malament</h1>');
+  }
 });
 
 // enable pre-flight request
