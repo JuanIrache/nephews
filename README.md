@@ -36,16 +36,15 @@ NodeJS/Express API
 
 ## External services
 
-- SMS verification code submission
-- Phone call forwarding
+- SMS verification code submission (Twilio)
+- Phone call forwarding (Twilio)
 
 ## To-Do
 
-- ValidateKey not necessary if using ids?
-- Use url params instead of slash
+- Music between voice sentence
+- Create delete provider page
 - Warning "overseas numbers while testing"
 - Different colors for links vs normal text
-- Create delete provider page
 - Handle cors
 - Better error handling
 - Mobile sizes
