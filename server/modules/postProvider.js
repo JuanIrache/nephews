@@ -11,7 +11,7 @@ const {
   NEBOTS_SERVER
 } = process.env;
 
-const twilio = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
+const sms = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
 
 module.exports = async (req, res) => {
   let { name, lastName, phone } = req.body || {};
@@ -50,7 +50,7 @@ module.exports = async (req, res) => {
 
       //   console.log(body);
 
-      twilio.messages.create({
+      sms.messages.create({
         body,
         from: NEBOTS_TWFROM,
         to: phone

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const postProvider = require('./modules/postProvider');
+const postCall = require('./modules/postCall');
 const validateProvider = require('./modules/validateProvider');
 const ping = require('./modules/ping');
 
@@ -53,6 +54,9 @@ app.post('/provider', cors(), postProvider);
 
 // Validate provider
 app.get('/provider/:id/validate/:key', cors(corsOptions), validateProvider);
+
+// Add call
+app.post('/call', cors(), postCall);
 
 //Check server status
 app.get('/ping', cors(corsOptions), ping);
