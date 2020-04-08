@@ -4,8 +4,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const postProvider = require('./modules/postProvider');
-const postCall = require('./modules/postCall');
 const getProvider = require('./modules/getProvider');
+const deleteProvider = require('./modules/deleteProvider');
+const postCall = require('./modules/postCall');
 const getCall = require('./modules/getCall');
 const ping = require('./modules/ping');
 
@@ -58,6 +59,9 @@ app.post('/provider', cors(), postProvider);
 
 // Validate provider
 app.get('/provider/:id', cors(corsOptions), getProvider);
+
+// Delete provider
+app.delete('/provider/:id', cors(corsOptions), deleteProvider);
 
 // Add call
 app.post('/call', cors(), postCall);
