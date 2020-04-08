@@ -50,3 +50,4 @@ NodeJS/Express API
 - Protect from smsing/calling expensive numbers
 - Authenticate webhook endpoint
 - Classify calls and providers by topic and language
+- Favicons and some restyling
