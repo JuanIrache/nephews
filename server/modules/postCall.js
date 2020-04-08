@@ -52,9 +52,9 @@ module.exports = async (req, res) => {
 
     // Render the response as XML in reply to the webhook request
     res.type('text/xml');
-    res.send(twiml.toString());
+    return res.send(twiml.toString());
   } catch (error) {
     console.error(error);
-    res.sendStatus(500);
+    return res.sendStatus(500);
   }
 };
