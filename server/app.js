@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const postProvider = require('./modules/postProvider');
 const postCall = require('./modules/postCall');
 const validateProvider = require('./modules/validateProvider');
+const confirmCall = require('./modules/confirmCall');
 const ping = require('./modules/ping');
 
 require('dotenv').config();
@@ -25,6 +26,9 @@ const getDate = () => {
     timeZone: 'Europe/Madrid'
   });
 };
+
+// Parse incoming POST params with Express middleware
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
@@ -57,6 +61,13 @@ app.get('/provider/:id/validate/:key', cors(corsOptions), validateProvider);
 
 // Add call
 app.post('/call', cors(), postCall);
+
+// Confirm call
+app.get(
+  '/call/:id/provider/:providerId/key/:key',
+  cors(corsOptions),
+  confirmCall
+);
 
 //Check server status
 app.get('/ping', cors(corsOptions), ping);
