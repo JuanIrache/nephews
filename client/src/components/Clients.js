@@ -9,7 +9,7 @@ export default () => (
       Truca al
       <div className="number">900 911 922</div>
     </div>
-    <Link to="/About">
+    <Link to="/about">
       <h4>Com funciona?</h4>
     </Link>
   </div>
