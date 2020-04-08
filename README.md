@@ -39,7 +39,6 @@ NodeJS/Express API
 
 ## To-Do
 
-- try to use a-zA-Z only ids
 - Different colors for links vs normal text
 - Create delete provider page
 - Set environment variables
@@ -51,4 +50,5 @@ NodeJS/Express API
 - Protect from smsing/calling expensive numbers
 - Authenticate webhook endpoint
 - Classify calls and providers by topic and language
+- Better id and keys management
 - Favicons and some restyling

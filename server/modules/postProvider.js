@@ -1,4 +1,4 @@
-const uid = require('uid');
+const { v4: uuidv4 } = require('uuid');
 
 const Provider = require('../models/Provider');
 
@@ -17,20 +17,40 @@ module.exports = async (req, res) => {
   let { name, lastName, phone } = req.body || {};
   if (name && lastName && phone) {
     try {
-      const validateKey = uid(12);
+      // Use letters only key for better SMS link funcitonality
+      let validateKey = uuidv4().replace(/[0-9\-]/g, '');
+      while (validateKey.length < 8) {
+        validateKey = uuidv4().replace(/[0-9\-]/g, '');
+      }
+
+      // Create letters-only unique ID
+      let _id = uuidv4().replace(/[0-9\-]/g, '');
+      while (validateKey.length < 8 || (await Provider.findOne({ _id }))) {
+        _id = uuidv4().replace(/[0-9\-]/g, '');
+      }
+
+      // Add Spanish prefix if missing
       if (phone.slice(0, 3) != '+34' && phone.slice(0, 4) != '0034') {
         phone = '+34' + phone;
       }
+
       // Delete if already existing
       await Provider.deleteOne({ phone }).exec();
-      const { _id } = await Provider.create({
+
+      await Provider.create({
+        _id,
         name,
         lastName,
         phone,
         validateKey
       });
+
+      const body = `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}/validate/${validateKey}`;
+
+      //   console.log(body);
+
       twilio.messages.create({
-        body: `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}/validate/${validateKey}`,
+        body,
         from: NEBOTS_TWFROM,
         to: phone
       });
@@ -41,7 +61,5 @@ module.exports = async (req, res) => {
 
     return res.sendStatus(200);
   }
-  return res.status(400).send({
-    message: 'Bad data'
-  });
+  return res.sendStatus(400);
 };
