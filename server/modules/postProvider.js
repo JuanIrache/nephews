@@ -17,15 +17,9 @@ module.exports = async (req, res) => {
   let { name, lastName, phone } = req.body || {};
   if (name && lastName && phone) {
     try {
-      // Use letters only key for better SMS link funcitonality
-      let validateKey = uuidv4().replace(/[0-9\-]/g, '');
-      while (validateKey.length < 8) {
-        validateKey = uuidv4().replace(/[0-9\-]/g, '');
-      }
-
       // Create letters-only unique ID
       let _id = uuidv4().replace(/[0-9\-]/g, '');
-      while (validateKey.length < 8 || (await Provider.findOne({ _id }))) {
+      while (_id.length < 8 || (await Provider.findOne({ _id }))) {
         _id = uuidv4().replace(/[0-9\-]/g, '');
       }
 
@@ -37,23 +31,12 @@ module.exports = async (req, res) => {
       // Delete if already existing
       await Provider.deleteOne({ phone }).exec();
 
-      await Provider.create({
-        _id,
-        name,
-        lastName,
-        phone,
-        validateKey,
-        valid: false
-      });
+      await Provider.create({ _id, name, lastName, phone, valid: false });
 
       const body = `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}?action=validate`;
 
       tw.messages
-        .create({
-          body,
-          from: NEBOTS_TWFROM,
-          to: phone
-        })
+        .create({ body, from: NEBOTS_TWFROM, to: phone })
         .catch(err => {
           console.error(err);
           return res.sendStatus(500);

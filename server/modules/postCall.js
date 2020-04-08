@@ -17,15 +17,9 @@ const tw = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
 
 module.exports = async (req, res) => {
   try {
-    // Use letters only key for better SMS link funcitonality
-    let validateKey = uuidv4().replace(/[0-9\-]/g, '');
-    while (validateKey.length < 8) {
-      validateKey = uuidv4().replace(/[0-9\-]/g, '');
-    }
-
     // Create letters-only unique ID
     let _id = uuidv4().replace(/[0-9\-]/g, '');
-    while (validateKey.length < 8 || (await Provider.findOne({ _id }))) {
+    while (_id.length < 8 || (await Call.findOne({ _id }))) {
       _id = uuidv4().replace(/[0-9\-]/g, '');
     }
 
@@ -35,7 +29,7 @@ module.exports = async (req, res) => {
     // Delete if already existing
     await Call.deleteOne({ callSid }).exec();
 
-    await Call.create({ _id, validateKey, callSid });
+    await Call.create({ _id, callSid });
 
     // Send sms to providers
 
@@ -45,11 +39,7 @@ module.exports = async (req, res) => {
       const body = `Hola ${provider.name}, una persona necessita la teva ajuda. Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/call/${_id}?provider=${provider._id}`;
 
       tw.messages
-        .create({
-          body,
-          from: NEBOTS_TWFROM,
-          to: provider.phone
-        })
+        .create({ body, from: NEBOTS_TWFROM, to: provider.phone })
         .catch(console.error);
 
       //   To-Do respond 500 if one crash?
@@ -67,7 +57,6 @@ module.exports = async (req, res) => {
     res.send(twiml.toString());
   } catch (error) {
     console.error(error);
-
     res.sendStatus(500);
   }
 };
