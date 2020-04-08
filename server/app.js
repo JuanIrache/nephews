@@ -9,14 +9,20 @@ const Provider = require('./models/Provider');
 require('dotenv').config();
 
 const {
-  GTE_PREMIUM_PORT,
-  GTE_PREMIUM_CLIENTURL,
+  NEBOTS_PORT,
+  NEBOTS_CLIENTURL,
   NODE_ENV,
-  GTE_PREMIUM_ATLAS_USER,
-  GTE_PREMIUM_ATLAS_PASS,
-  GTE_PREMIUM_ATLAS_SERVER,
-  GTE_PREMIUM_ATLAS_DB
+  NEBOTS_ATLAS_USER,
+  NEBOTS_ATLAS_PASS,
+  NEBOTS_ATLAS_SERVER,
+  NEBOTS_ATLAS_DB,
+  NEBOTS_TWACCOUNTSID,
+  NEBOTS_TWAUTHTOKEN,
+  NEBOTS_TWFROM,
+  NEBOTS_SERVER
 } = process.env;
+
+const twilio = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
 
 const getDate = () => {
   return new Date().toLocaleString('es-ES', {
@@ -27,7 +33,7 @@ const getDate = () => {
 app.use(bodyParser.json());
 
 mongoose.connect(
-  `mongodb+srv://${GTE_PREMIUM_ATLAS_USER}:${GTE_PREMIUM_ATLAS_PASS}@${GTE_PREMIUM_ATLAS_SERVER}/${GTE_PREMIUM_ATLAS_DB}?retryWrites=true&w=majority`,
+  `mongodb+srv://${NEBOTS_ATLAS_USER}:${NEBOTS_ATLAS_PASS}@${NEBOTS_ATLAS_SERVER}/${NEBOTS_ATLAS_DB}?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -39,7 +45,7 @@ mongoose.connect(
 const corsOptions =
   NODE_ENV === 'production'
     ? {
-        origin: GTE_PREMIUM_CLIENTURL,
+        origin: NEBOTS_CLIENTURL,
         optionsSuccessStatus: 200
       }
     : null;
@@ -64,7 +70,17 @@ app.post('/provider', cors(), async (req, res) => {
       }
       // Delete if already existing
       await Provider.deleteOne({ phone }).exec();
-      await Provider.create({ name, lastName, phone, validateKey });
+      const { _id } = await Provider.create({
+        name,
+        lastName,
+        phone,
+        validateKey
+      });
+      twilio.messages.create({
+        body: `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}/${validateKey}`,
+        from: NEBOTS_TWFROM,
+        to: phone
+      });
     } catch (error) {
       console.log(error);
       return res.sendStatus(500);
@@ -93,6 +109,6 @@ app.get('/ping', cors(corsOptions), async (req, res) => {
   res.json({ status: 'ok', ip: addresses[0] });
 });
 
-app.listen(GTE_PREMIUM_PORT, () =>
-  console.log(`${getDate()} - Listening on port ${GTE_PREMIUM_PORT}`)
+app.listen(NEBOTS_PORT, () =>
+  console.log(`${getDate()} - Listening on port ${NEBOTS_PORT}`)
 );
