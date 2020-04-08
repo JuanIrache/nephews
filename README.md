@@ -39,17 +39,18 @@ NodeJS/Express API
 
 ## To-Do
 
+- ValidateKey not necessary if using ids?
+- Use url params instead of slash
 - Warning "overseas numbers while testing"
 - Different colors for links vs normal text
 - Create delete provider page
-- Set environment variables
 - Handle cors
-- Assign secure url to server
+- Better error handling
 - Mobile sizes
+- Favicons and some restyling
+- Classify calls and providers by topic and language
 - Add terms and conditions
+- Better id and keys management
 - Protect from brute force
 - Protect from smsing/calling expensive numbers
 - Authenticate webhook endpoint
-- Classify calls and providers by topic and language
-- Better id and keys management
-- Favicons and some restyling
