@@ -38,9 +38,7 @@ module.exports = async (req, res) => {
     for (const provider of providers) {
       const body = `Hola ${provider.name}, una persona necessita la teva ajuda. Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/call/${_id}?provider=${provider._id}`;
 
-      tw.messages
-        .create({ body, from: NEBOTS_TWFROM, to: provider.phone })
-        .catch(console.error);
+      tw.messages.create({ body, from: NEBOTS_TWFROM, to: provider.phone });
 
       //   To-Do respond 500 if one crash?
     }
