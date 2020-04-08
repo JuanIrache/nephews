@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../style/Providers.scss';
 
 export default () => {
-  const [form, setForm] = useState({ name: '', lastName: '', phone: '' });
+  const [form, setForm] = useState({ phone: '' });
   const [result, setResult] = useState('');
   const onChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -12,7 +12,7 @@ export default () => {
   const onSubmit = e => {
     e.preventDefault();
     fetch(process.env.REACT_APP_SERVER + '/provider', {
-      method: 'POST',
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -31,33 +31,7 @@ export default () => {
     <div className="Providers">
       {result != 'success' ? (
         <form onSubmit={onSubmit}>
-          <h3>
-            Registra el teu telèfon per ajudar a qui necessiti suport tècnic
-          </h3>
-          <label htmlFor="name" className="small">
-            Nom
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={form.name}
-            onChange={onChange}
-            required
-          />
-
-          <label htmlFor="lastName" className="small">
-            Cognoms
-          </label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            value={form.lastName}
-            onChange={onChange}
-            required
-          />
-
+          <h3>Si has registrat el teu contacte, aquí pots eliminar-lo</h3>
           <label htmlFor="phone" className="small">
             Telèfon mòbil
           </label>
@@ -69,14 +43,9 @@ export default () => {
             onChange={onChange}
             required
           />
-
-          <label>
-            <input type="checkbox" name="conditions" required /> Acceptes les
-            condicions d'ús?
-          </label>
-          <input type="submit" value="Registrar" />
+          <input type="submit" value="Eliminar" />
           {result == 'fail' && (
-            <p className="warning">Error comunicant amb el servidor</p>
+            <p className="warning">Error. Segur que el número és correcte?</p>
           )}
         </form>
       ) : (
@@ -88,8 +57,8 @@ export default () => {
           <h4>Com funciona?</h4>
         </Link>{' '}
         |
-        <Link to="/Delete">
-          <h4>Donar-se de baixa</h4>
+        <Link to="/Providers">
+          <h4>Registra't</h4>
         </Link>
       </div>
     </div>

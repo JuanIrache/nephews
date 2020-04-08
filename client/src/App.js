@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Clients from './components/Clients';
 import Providers from './components/Providers';
 import About from './components/About';
+import Delete from './components/Delete';
 
 import './style/App.scss';
 
@@ -26,6 +27,9 @@ export default () => (
         </Route>
         <Route exact path="/about">
           <About />
+        </Route>
+        <Route exact path="/delete">
+          <Delete />
         </Route>
         <Route path="/">
           <Home />
