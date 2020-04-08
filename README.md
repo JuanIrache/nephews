@@ -39,6 +39,8 @@ NodeJS/Express API
 
 ## To-Do
 
+- Set environment variables
+- Assign secure url to server
 - Mobile sizes
 - Add terms and conditions
 
