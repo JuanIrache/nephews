@@ -24,13 +24,15 @@ A provider delete form verifies the phone again before submitting a DELETE reque
 
 NodeJS/Express API
 
-- /provider POST Registers new providers and submits an SMS with a validation code
-- /provider/id PUT Verifies providers by validating the SMS or starts the delete process
-- /provider/id DELETE Verifies the deletion confirmation code and deletes the provider
+### Routes
 
-- /call POST Creates a call element and pushes an SMS notification to all providers
-- /call/id PUT Accepts the call and forwards the specific phone call from the client to the provider
-- /call/id DELETE Deletes the call element
+| Route        | Method | Body/Query | Result                                                                 |
+| ------------ | ------ | ---------- | ---------------------------------------------------------------------- |
+| /provider    | POST   | provider   | Registers new providers and submits an SMS with a validation code      |
+| /provider/id | DELETE |            | Starts the deletion process                                            |
+| /provider/id | GET    | action     | Confirms a previously started action (validate or delete)              |
+| /call        | POST   | call       | Creates a call element and pushes an SMS notification to all providers |
+| /call/id     | GET    | provider   | Accepts the call and forwards it to the provider                       |
 
 ## External services
 
