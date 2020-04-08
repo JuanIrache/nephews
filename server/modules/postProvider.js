@@ -42,7 +42,8 @@ module.exports = async (req, res) => {
         name,
         lastName,
         phone,
-        validateKey
+        validateKey,
+        valid: false
       });
 
       const body = `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}/validate/${validateKey}`;
