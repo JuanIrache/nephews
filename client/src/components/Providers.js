@@ -72,7 +72,10 @@ export default () => {
 
           <label>
             <input type="checkbox" name="conditions" required /> Acceptes les{' '}
-            <Link to="/terms">condicions d'ús</Link>?
+            <Link to="/terms" target="_blank">
+              condicions d'ús
+            </Link>
+            ?
           </label>
           <input type="submit" value="Registrar" />
           {result === 'fail' && (
