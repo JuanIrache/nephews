@@ -55,8 +55,10 @@ app.post('/provider', cors(), postProvider);
 // Validate provider
 app.get('/provider/:id', cors(corsOptions), getProvider);
 
+// Enable pre-flight request
+app.options('/provider/:id', cors());
 // Delete provider
-app.delete('/provider/:id', cors(corsOptions), deleteProvider);
+app.delete('/provider', cors(), deleteProvider);
 
 // Add call
 app.post('/call', cors(), postCall);

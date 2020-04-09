@@ -36,12 +36,11 @@ module.exports = async (req, res) => {
       const body = `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}?action=validate`;
 
       tw.messages.create({ body, from: NEBOTS_TWFROM, to: phone });
+      return res.sendStatus(200);
     } catch (error) {
       console.error(error);
       return res.sendStatus(500);
     }
-
-    return res.sendStatus(200);
   }
   return res.sendStatus(400);
 };

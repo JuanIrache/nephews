@@ -25,17 +25,17 @@ module.exports = async (req, res) => {
       const provider = Provider.findOne({ phone });
 
       if (!provider) {
-        return res.sendStatus(500);
+        return res.sendStatus(400);
       }
 
       const body = `Per confirmar la baixa de nebots, segueix aquest enllaç ${NEBOTS_SERVER}/provider/${_id}?action=delete`;
 
       tw.messages.create({ body, from: NEBOTS_TWFROM, to: phone });
+      return res.sendStatus(200);
     } catch (error) {
       console.error(error);
       return res.sendStatus(500);
     }
-    return res.sendStatus(200);
   }
   return res.sendStatus(400);
 };
