@@ -7,7 +7,7 @@ export default () => (
   <div className="Client">
     <div>
       Truca al
-      <div className="number">900 911 922</div>
+      <div className="number">{process.env.REACT_APP_PHONE}</div>
     </div>
     <Link to="/about">
       <h4>Com funciona?</h4>
