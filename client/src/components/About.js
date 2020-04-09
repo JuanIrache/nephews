@@ -1,9 +1,9 @@
 import React from 'react';
 
-import '../style/About.scss';
+import '../style/Page.scss';
 
 export default () => (
-  <div className="About">
+  <div className="Page">
     <div className="container">
       <p>
         <strong>nebots</strong> és un portal que permet a les persones poc

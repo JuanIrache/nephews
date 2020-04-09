@@ -6,6 +6,7 @@ import Clients from './components/Clients';
 import Providers from './components/Providers';
 import About from './components/About';
 import Delete from './components/Delete';
+import Terms from './components/Terms';
 
 import './style/App.scss';
 
@@ -30,6 +31,9 @@ export default () => (
         </Route>
         <Route exact path="/delete">
           <Delete />
+        </Route>
+        <Route exact path="/terms">
+          <Terms />
         </Route>
         <Route path="/">
           <Home />
