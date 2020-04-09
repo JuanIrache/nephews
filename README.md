@@ -41,6 +41,7 @@ NodeJS/Express API
 
 ## To-Do
 
+- delete dashes and spaces on phone before saving
 - Music between voice sentence
 - Create delete provider page
 - Warning "overseas numbers while testing"
