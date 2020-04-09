@@ -12,7 +12,7 @@ import './style/App.scss';
 
 export default () => (
   <div className="App">
-    <Router>
+    <Router basename={'/nebots'}>
       <header>
         <Link to="/">
           <h1>nebots</h1>
