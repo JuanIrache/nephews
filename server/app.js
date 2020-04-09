@@ -3,12 +3,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const postProvider = require('./modules/postProvider');
-const getProvider = require('./modules/getProvider');
-const deleteProvider = require('./modules/deleteProvider');
-const postCall = require('./modules/postCall');
-const getCall = require('./modules/getCall');
-const ping = require('./modules/ping');
+const postProvider = require('./components/postProvider');
+const getProvider = require('./components/getProvider');
+const deleteProvider = require('./components/deleteProvider');
+const postCall = require('./components/postCall');
+const getCall = require('./components/getCall');
+const ping = require('./components/ping');
 
 require('dotenv').config();
 
