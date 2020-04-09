@@ -6,6 +6,12 @@ body, */
   height: 100vh;
 }
 
+@media (max-aspect-ratio: 1/1) {
+  #root {
+    height: 88vh;
+  }
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

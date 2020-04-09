@@ -4,6 +4,10 @@
   flex: 1;
   display: flex;
   align-items: stretch;
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    justify-content: space-around;
+  }
   a {
     width: 100%;
     display: flex;
@@ -11,8 +15,16 @@
     align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
+    @media screen and (max-width: 992px) {
+      flex: 1;
+      font-size: 1.2rem;
+    }
     &:first-of-type {
       border-right: 1px solid $dark;
+      @media screen and (max-width: 992px) {
+        border-right: none;
+        border-bottom: 1px solid $dark;
+      }
     }
   }
 }
