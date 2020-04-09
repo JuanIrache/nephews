@@ -22,13 +22,13 @@ module.exports = async (req, res) => {
         phone = '+34' + phone;
       }
 
-      const provider = Provider.findOne({ phone });
+      const provider = await Provider.findOne({ phone }).exec();
 
       if (!provider) {
         return res.sendStatus(400);
       }
 
-      const body = `Per confirmar la baixa de nebots, segueix aquest enllaç ${NEBOTS_SERVER}/provider/${_id}?action=delete`;
+      const body = `Per confirmar la baixa de nebots, segueix aquest enllaç ${NEBOTS_SERVER}/provider/${provider._id}?action=delete`;
 
       tw.messages.create({ body, from: NEBOTS_TWFROM, to: phone });
       return res.sendStatus(200);
