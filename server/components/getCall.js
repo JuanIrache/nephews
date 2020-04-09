@@ -35,7 +35,11 @@ module.exports = async (req, res) => {
 
     Call.deleteOne({ _id: req.params.id }, () => {});
 
-    return res.status(200).send('<h1>Iniciem la connexió</h1>');
+    return res
+      .status(200)
+      .send(
+        `<h1>Gràcies. Si l'usuari segueix en línia iniciarem la connexió</h1>`
+      );
   } catch (error) {
     console.error(error);
     return res.status(500).send('<h1>Alguna cosa ha anat malament</h1>');
