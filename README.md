@@ -47,6 +47,7 @@ NodeJS/Express API
 - Handle cors
 - Better error handling
 - Mobile sizes
+- React warnings
 - Favicons and some restyling
 - Classify calls and providers by topic and language
 - Add terms and conditions
