@@ -52,15 +52,10 @@ export default () => {
         <p className="success">Gràcies, aviat rebràs instruccions per SMS.</p>
       )}
 
-      <div className="links">
-        <Link to="/about">
-          <h4>Com funciona?</h4>
-        </Link>{' '}
-        |
-        <Link to="/Providers">
-          <h4>Registra't</h4>
-        </Link>
-      </div>
+      <h4 className="links">
+        <Link to="/about">Com funciona?</Link>
+        <Link to="/providers">Registra't</Link>
+      </h4>
     </div>
   );
 };

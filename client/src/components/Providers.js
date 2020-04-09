@@ -83,15 +83,10 @@ export default () => {
         <p className="success">Gràcies, aviat rebràs instruccions per SMS.</p>
       )}
 
-      <div className="links">
-        <Link to="/about">
-          <h4>Com funciona?</h4>
-        </Link>{' '}
-        |
-        <Link to="/Delete">
-          <h4>Donar-se de baixa</h4>
-        </Link>
-      </div>
+      <h4 className="links">
+        <Link to="/about">Com funciona?</Link>
+        <Link to="/delete">Donar-se de baixa</Link>
+      </h4>
     </div>
   );
 };
