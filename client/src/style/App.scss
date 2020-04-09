@@ -11,7 +11,12 @@ html {
   min-height: 100%;
   .danger {
     color: $light;
-    background-color: $danger !important;
+    background-color: $danger;
+    padding: 0.3rem;
+  }
+  .success {
+    color: $light;
+    background-color: $dark;
     padding: 0.3rem;
   }
   a {
