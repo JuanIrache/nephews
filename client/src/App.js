@@ -16,7 +16,7 @@ export default () => (
       <header>
         <Link to="/">
           <h1>nebots</h1>
-          <h2>assistència tècnica general</h2>
+          <h2>assistència tècnica humana</h2>
         </Link>
       </header>
       <Switch>
