@@ -30,7 +30,6 @@ const getDate = () => {
 
 // Parse incoming POST params with Express middleware
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(bodyParser.json());
 
 mongoose.connect(
@@ -42,14 +41,10 @@ mongoose.connect(
     useUnifiedTopology: true
   }
 );
-
 const corsOptions =
   NODE_ENV === 'production'
-    ? {
-        origin: NEBOTS_CLIENTURL,
-        optionsSuccessStatus: 200
-      }
-    : null;
+    ? { origin: NEBOTS_CLIENTURL, optionsSuccessStatus: 200 }
+    : {};
 
 // Enable pre-flight request
 app.options('/provider', cors());
