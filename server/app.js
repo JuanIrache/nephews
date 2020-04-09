@@ -41,33 +41,31 @@ mongoose.connect(
     useUnifiedTopology: true
   }
 );
+
 const corsOptions =
   NODE_ENV === 'production'
     ? { origin: NEBOTS_CLIENTURL, optionsSuccessStatus: 200 }
     : {};
 
-// Enable pre-flight request
-app.options('/provider', cors());
+app.use(cors(corsOptions));
 
 // Add provider
-app.post('/provider', cors(), postProvider);
+app.post('/provider', postProvider);
 
-// Validate provider
-app.get('/provider/:id', cors(corsOptions), getProvider);
+// Validate or delete provider
+app.get('/provider/:id', getProvider);
 
-// Enable pre-flight request
-app.options('/provider/:id', cors());
 // Delete provider
-app.delete('/provider', cors(), deleteProvider);
+app.delete('/provider', deleteProvider);
 
 // Add call
-app.post('/call', cors(), postCall);
+app.post('/call', postCall);
 
 // Confirm call
-app.get('/call/:id', cors(corsOptions), getCall);
+app.get('/call/:id', getCall);
 
 //Check server status
-app.get('/ping', cors(corsOptions), ping);
+app.get('/ping', ping);
 
 app.listen(NEBOTS_PORT, () =>
   console.log(`${getDate()} - Listening on port ${NEBOTS_PORT}`)
