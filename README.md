@@ -41,13 +41,12 @@ NodeJS/Express API
 
 ## To-Do
 
-- Use real number
+- Use Spanish number
 - Add real hold message with music
 - Test with real people
 - Classify calls and providers by topic and language
 - Add real terms and conditions
 - Better error handling
-- Better id and keys management
 - Protect from brute force
 - Protect from smsing/calling expensive numbers
 - Authenticate webhook endpoint

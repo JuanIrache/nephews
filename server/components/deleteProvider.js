@@ -1,5 +1,3 @@
-const { v4: uuidv4 } = require('uuid');
-
 const Provider = require('../models/Provider');
 
 require('dotenv').config();

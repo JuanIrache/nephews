@@ -1,6 +1,6 @@
-const { v4: uuidv4 } = require('uuid');
-
 const Provider = require('../models/Provider');
+
+const generateKey = require('../modules/generateKey');
 
 require('dotenv').config();
 
@@ -18,9 +18,9 @@ module.exports = async (req, res) => {
   if (name && lastName && phone) {
     try {
       // Create letters-only unique ID
-      let _id = uuidv4().replace(/[0-9\-]/g, '');
-      while (_id.length < 8 || (await Provider.findOne({ _id }))) {
-        _id = uuidv4().replace(/[0-9\-]/g, '');
+      let _id = generateKey(12);
+      while (await Provider.findOne({ _id })) {
+        _id = generateKey(12);
       }
 
       // Add Spanish prefix if missing

@@ -1,8 +1,8 @@
 const { VoiceResponse } = require('twilio').twiml;
-const { v4: uuidv4 } = require('uuid');
 
 const Call = require('../models/Call');
 const Provider = require('../models/Provider');
+const generateKey = require('../modules/generateKey');
 
 require('dotenv').config();
 
@@ -18,9 +18,9 @@ const tw = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
 module.exports = async (req, res) => {
   try {
     // Create letters-only unique ID
-    let _id = uuidv4().replace(/[0-9\-]/g, '');
-    while (_id.length < 8 || (await Call.findOne({ _id }))) {
-      _id = uuidv4().replace(/[0-9\-]/g, '');
+    let _id = generateKey(12);
+    while (await Call.findOne({ _id })) {
+      _id = generateKey(12);
     }
 
     // CallSid is the call identifier on Twilio's end
