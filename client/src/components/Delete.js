@@ -19,7 +19,7 @@ export default () => {
       body: JSON.stringify(form)
     })
       .then(res => {
-        if (res.status == 200) setResult('success');
+        if (+res.status === 200) setResult('success');
         else setResult('fail');
       })
       .catch(err => {
@@ -29,7 +29,7 @@ export default () => {
   };
   return (
     <div className="Providers">
-      {result != 'success' ? (
+      {result !== 'success' ? (
         <form onSubmit={onSubmit}>
           <h3>Si has registrat el teu contacte, aquí pots eliminar-lo</h3>
           <label htmlFor="phone" className="small">
@@ -44,7 +44,7 @@ export default () => {
             required
           />
           <input type="submit" value="Eliminar" />
-          {result == 'fail' && (
+          {result === 'fail' && (
             <p className="warning">Error. Segur que el número és correcte?</p>
           )}
         </form>

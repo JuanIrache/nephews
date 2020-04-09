@@ -19,7 +19,7 @@ export default () => {
       body: JSON.stringify(form)
     })
       .then(res => {
-        if (res.status == 200) setResult('success');
+        if (+res.status === 200) setResult('success');
         else setResult('fail');
       })
       .catch(err => {
@@ -29,7 +29,7 @@ export default () => {
   };
   return (
     <div className="Providers">
-      {result != 'success' ? (
+      {result !== 'success' ? (
         <form onSubmit={onSubmit}>
           <h3>
             Registra el teu telèfon per ajudar a qui necessiti suport tècnic
@@ -75,7 +75,7 @@ export default () => {
             <Link to="/terms">condicions d'ús</Link>?
           </label>
           <input type="submit" value="Registrar" />
-          {result == 'fail' && (
+          {result === 'fail' && (
             <p className="warning">Error comunicant amb el servidor</p>
           )}
         </form>
