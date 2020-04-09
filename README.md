@@ -41,7 +41,6 @@ NodeJS/Express API
 
 ## To-Do
 
-- Handle cors
 - Add deploy script
 - Use real number
 - Add real hold message with music
