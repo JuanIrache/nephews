@@ -41,7 +41,6 @@ NodeJS/Express API
 
 ## To-Do
 
-- Use Spanish number
 - Add real hold message with music
 - Test with real people
 - Classify calls and providers by topic and language
