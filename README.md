@@ -45,6 +45,7 @@ NodeJS/Express API
 - Add deploy script
 - Use real number
 - Add real hold message with music
+- Test with real people
 - Classify calls and providers by topic and language
 - Add real terms and conditions
 - Better error handling
