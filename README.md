@@ -41,15 +41,18 @@ NodeJS/Express API
 
 ## To-Do
 
-- Music between voice sentence
 - Warning "overseas numbers while testing"
 - Different colors for links vs normal text
-- Handle cors
-- Better error handling
 - Mobile sizes
 - Favicons and some restyling
-- Classify calls and providers by topic and language
+- Handle cors
+- Real voice with music
+- Better about page
+- Better error handling
 - Add terms and conditions
+- Add deploy script
+- Test with real people
+- Classify calls and providers by topic and language
 - Better id and keys management
 - Protect from brute force
 - Protect from smsing/calling expensive numbers
