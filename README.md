@@ -26,13 +26,13 @@ NodeJS/Express API
 
 ### Routes
 
-| Route        | Method | Body/Query | Result                                                                 |
-| ------------ | ------ | ---------- | ---------------------------------------------------------------------- |
-| /provider    | POST   | provider   | Registers new providers and submits an SMS with a validation code      |
-| /provider/id | DELETE |            | Starts the deletion process                                            |
-| /provider/id | GET    | action     | Confirms a previously started action (validate or delete)              |
-| /call        | POST   | call       | Creates a call element and pushes an SMS notification to all providers |
-| /call/id     | GET    | provider   | Accepts the call and forwards it to the provider                       |
+| Route        | Method | Body/Query  | Result                                                                 |
+| ------------ | ------ | ----------- | ---------------------------------------------------------------------- |
+| /provider    | POST   | provider    | Registers new providers and submits an SMS with a validation code      |
+| /provider    | DELETE | provider id | Starts the deletion process                                            |
+| /provider/id | GET    | action      | Confirms a previously started action (validate or delete)              |
+| /call        | POST   | call        | Creates a call element and pushes an SMS notification to all providers |
+| /call/id     | GET    | provider id | Accepts the call and forwards it to the provider                       |
 
 ## External services
 
@@ -43,7 +43,6 @@ NodeJS/Express API
 
 - delete dashes and spaces on phone before saving
 - Music between voice sentence
-- Create delete provider page
 - Warning "overseas numbers while testing"
 - Different colors for links vs normal text
 - Handle cors
