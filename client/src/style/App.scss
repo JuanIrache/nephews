@@ -9,6 +9,11 @@ html {
   display: flex;
   flex-direction: column-reverse;
   min-height: 100%;
+  .danger {
+    color: $light;
+    background-color: $danger !important;
+    padding: 0.3rem;
+  }
   a {
     color: inherit;
     transition: color 0.2s ease;

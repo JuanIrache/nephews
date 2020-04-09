@@ -79,7 +79,7 @@ export default () => {
           </label>
           <input type="submit" value="Registrar" />
           {result === 'fail' && (
-            <p className="warning">Error comunicant amb el servidor</p>
+            <p className="danger">Error comunicant amb el servidor</p>
           )}
         </form>
       ) : (

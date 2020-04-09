@@ -45,7 +45,7 @@ export default () => {
           />
           <input type="submit" value="Eliminar" />
           {result === 'fail' && (
-            <p className="warning">Error. Segur que el número és correcte?</p>
+            <p className="danger">Error. Segur que el número és correcte?</p>
           )}
         </form>
       ) : (
