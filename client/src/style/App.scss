@@ -1,11 +1,14 @@
 @import './variables.scss';
 
-.App {
+html {
   background-color: $light;
+}
+
+.App {
   color: $dark;
   display: flex;
   flex-direction: column-reverse;
-  height: 100%;
+  min-height: 100%;
   a {
     color: inherit;
     transition: color 0.2s ease;
