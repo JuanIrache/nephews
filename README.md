@@ -41,7 +41,6 @@ NodeJS/Express API
 
 ## To-Do
 
-- delete dashes and spaces on phone before saving and replace 00 with +
 - Music between voice sentence
 - Warning "overseas numbers while testing"
 - Different colors for links vs normal text
