@@ -41,7 +41,6 @@ NodeJS/Express API
 
 ## To-Do
 
-- Add deploy script
 - Use real number
 - Add real hold message with music
 - Test with real people
