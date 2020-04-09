@@ -11,6 +11,9 @@
   flex-direction: column;
   .number {
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 7rem;
+    @media screen and (max-width: 992px) {
+      font-size: 2.7rem;
+    }
   }
 }
