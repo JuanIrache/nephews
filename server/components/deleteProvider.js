@@ -30,6 +30,8 @@ module.exports = async (req, res) => {
 
       const body = `Per confirmar la baixa de nebots, segueix aquest enllaç ${NEBOTS_SERVER}/provider/${provider._id}?action=delete`;
 
+      // console.log(body);
+
       tw.messages.create({ body, from: NEBOTS_TWFROM, to: phone });
       return res.sendStatus(200);
     } catch (error) {
