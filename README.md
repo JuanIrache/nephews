@@ -41,10 +41,13 @@ NodeJS/Express API
 
 ## To-Do
 
+- Form width on mobile
+- Classify providers by topic and language
+- Hide caller id
 - Add real hold message with music
 - Test with real people
-- Classify calls and providers by topic and language
 - Add real terms and conditions
+- Classify calls and providers by topic and language
 - Better error handling
 - Protect from brute force
 - Protect from smsing/calling expensive numbers
