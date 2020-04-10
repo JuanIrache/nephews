@@ -49,6 +49,10 @@ module.exports = async (req, res) => {
       );
   } catch (error) {
     console.error(`${getDate()} - Error establishing call: ${error.message}`);
-    return res.status(500).send('<h1>Alguna cosa ha anat malament</h1>');
+    return res
+      .status(500)
+      .send(
+        '<h1>Connexió no establerta. Pot ser que ja no calgui la teva ajuda. Gràcies!</h1>'
+      );
   }
 };
