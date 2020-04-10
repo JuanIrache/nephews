@@ -1,4 +1,5 @@
 const Provider = require('../models/Provider');
+const getDate = require('../modules/getDate');
 
 require('dotenv').config();
 
@@ -31,11 +32,15 @@ module.exports = async (req, res) => {
       // console.log(body);
 
       tw.messages.create({ body, from: NEBOTS_TWFROM, to: phone });
+      console.log(`${getDate()} - Delete provider request`);
       return res.sendStatus(200);
     } catch (error) {
-      console.error(error);
+      console.error(
+        `${getDate()} - Error requesting Provider delete: ${error.message}`
+      );
       return res.sendStatus(500);
     }
   }
+  console.error(`${getDate()} - Phone not present in body`);
   return res.sendStatus(400);
 };

@@ -3,6 +3,7 @@ const { VoiceResponse } = require('twilio').twiml;
 const Call = require('../models/Call');
 const Provider = require('../models/Provider');
 const generateKey = require('../modules/generateKey');
+const getDate = require('../modules/getDate');
 
 require('dotenv').config();
 
@@ -52,9 +53,10 @@ module.exports = async (req, res) => {
 
     // Render the response as XML in reply to the webhook request
     res.type('text/xml');
+    console.log(`${getDate()} - Call started`);
     return res.send(twiml.toString());
   } catch (error) {
-    console.error(error);
+    console.error(`${getDate()} - Error saving Call: ${error.message}`);
     return res.sendStatus(500);
   }
 };

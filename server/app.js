@@ -9,6 +9,7 @@ const deleteProvider = require('./routes/deleteProvider');
 const postCall = require('./routes/postCall');
 const getCall = require('./routes/getCall');
 const ping = require('./routes/ping');
+const getDate = require('./modules/getDate');
 
 require('dotenv').config();
 
@@ -21,12 +22,6 @@ const {
   NEBOTS_ATLAS_SERVER,
   NEBOTS_ATLAS_DB
 } = process.env;
-
-const getDate = () => {
-  return new Date().toLocaleString('es-ES', {
-    timeZone: 'Europe/Madrid'
-  });
-};
 
 // Parse incoming POST params with Express middleware
 app.use(bodyParser.urlencoded({ extended: false }));

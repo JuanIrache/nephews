@@ -1,6 +1,7 @@
 const Provider = require('../models/Provider');
 
 const generateKey = require('../modules/generateKey');
+const getDate = require('../modules/getDate');
 
 require('dotenv').config();
 
@@ -38,11 +39,13 @@ module.exports = async (req, res) => {
       // console.log(body);
 
       tw.messages.create({ body, from: NEBOTS_TWFROM, to: phone });
+      console.log(`${getDate()} - Provider created`);
       return res.sendStatus(200);
     } catch (error) {
-      console.error(error);
+      console.error(`${getDate()} - Error saving Provider: ${error.message}`);
       return res.sendStatus(500);
     }
   }
+  console.error(`${getDate()} - Bad form data`);
   return res.sendStatus(400);
 };
