@@ -41,8 +41,7 @@ NodeJS/Express API
 
 ## To-Do
 
-- Form width on mobile
-- Classify providers by topic and language
+- Document
 - Hide caller id
 - Add real hold message with music
 - Test with real people
