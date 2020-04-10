@@ -1,3 +1,5 @@
+// Saves a Call when it starts, puts the client on hold and notifies Providers about the call
+
 const { VoiceResponse } = require('twilio').twiml;
 
 const Call = require('../models/Call');

@@ -1,3 +1,5 @@
+// Stores registered Providers data
+
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var mSchema = new Schema({

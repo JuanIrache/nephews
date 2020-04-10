@@ -1,3 +1,5 @@
+// Tries to format the phone as a Spanish number with the international prefix
+
 module.exports = phone => {
   phone = phone.replace(/^00/, '+');
   phone = phone.replace(/[- ]/g, '');

@@ -1,3 +1,5 @@
+// Receives a call confirmation from the SMS notification and tries to establish a connection
+
 const { VoiceResponse } = require('twilio').twiml;
 
 const Provider = require('../models/Provider');

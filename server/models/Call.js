@@ -1,3 +1,5 @@
+// Stores call details while they are useful for the server
+
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var mSchema = new Schema({

@@ -41,7 +41,6 @@ NodeJS/Express API
 
 ## To-Do
 
-- Document
 - Hide caller id
 - Add real hold message with music
 - Test with real people

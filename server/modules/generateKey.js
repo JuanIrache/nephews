@@ -1,3 +1,5 @@
+//Generates a letter-only (sms url friendly) key for ids
+
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
 module.exports = len => {

@@ -1,3 +1,5 @@
+// Modifies a Provider based on a confirmation SMS (validate or delete)
+
 const Provider = require('../models/Provider');
 const getDate = require('../modules/getDate');
 

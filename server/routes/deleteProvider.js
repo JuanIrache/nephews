@@ -1,3 +1,5 @@
+// Receives the delete Provider request and sends a confirmation SMS
+
 const Provider = require('../models/Provider');
 const getDate = require('../modules/getDate');
 

@@ -1,3 +1,5 @@
+// Copies the build to the specified public directory
+
 const fs = require('fs-extra');
 const path = require('path');
 

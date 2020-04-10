@@ -1,3 +1,5 @@
+// Returns the status of the server
+
 module.exports = (req, res) => {
   var os = require('os');
   var interfaces = os.networkInterfaces();

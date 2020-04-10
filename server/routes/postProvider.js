@@ -1,3 +1,5 @@
+// Creates a Provider after a request from the front-end and sends an SMS validation
+
 const Provider = require('../models/Provider');
 
 const generateKey = require('../modules/generateKey');
