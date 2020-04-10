@@ -44,6 +44,7 @@ NodeJS/Express API
 - Hide caller id
 - Add real hold message with music
 - Test with real people
+- Delete Call document when the client hangs up prematurely
 - Add real terms and conditions
 - Classify calls and providers by topic and language
 - Better error handling
