@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .Client {
   flex: 1;
   display: flex;
@@ -9,11 +11,22 @@
   }
   align-items: center;
   flex-direction: column;
-  .number {
-    font-weight: bold;
-    font-size: 7rem;
+  .client-content {
+    background-color: $light;
+    padding: 2rem;
+    box-shadow: 0px 0px 10px rgb(184, 184, 184);
     @media screen and (max-width: 992px) {
-      font-size: 2.7rem;
+      box-shadow: none;
+    }
+
+    .number {
+      margin-top: -1.5rem;
+      font-weight: bold;
+      font-size: 7rem;
+      @media screen and (max-width: 992px) {
+        margin-top: -0.5rem;
+        font-size: 2.7rem;
+      }
     }
   }
 }

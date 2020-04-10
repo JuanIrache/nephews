@@ -5,7 +5,7 @@ import '../style/Clients.scss';
 
 export default () => (
   <div className="Client">
-    <div>
+    <div className="client-content">
       Truca al
       <div className="number">{process.env.REACT_APP_PHONE}</div>
     </div>

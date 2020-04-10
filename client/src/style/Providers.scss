@@ -12,7 +12,16 @@
     justify-content: space-evenly;
   }
   form {
+    background-color: $light;
+    padding: 2rem;
+    box-shadow: 0px 0px 10px rgb(184, 184, 184);
+    @media screen and (max-width: 992px) {
+      box-shadow: none;
+    }
     max-width: 90vw;
+    h3 {
+      margin-top: 0;
+    }
     label {
       display: block;
       &.small {
@@ -44,6 +53,7 @@
       }
       &[type='submit'] {
         margin-top: 1rem;
+        margin-bottom: 0;
         padding: 1rem;
         font-family: inherit;
         font-weight: bold;
