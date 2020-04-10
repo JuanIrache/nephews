@@ -22,6 +22,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     &:hover {
+      color: $dark !important;
       background-color: $medium;
       font-size: 1.55rem;
     }
@@ -33,10 +34,10 @@
       font-size: 1rem !important;
     }
     &:first-of-type {
-      border-right: 1px solid $dark;
+      border-right: 1px solid white;
       @media (max-aspect-ratio: 1/1) {
         border-right: none !important;
-        border-bottom: 1px solid $dark;
+        border-bottom: 1px solid white;
       }
     }
   }

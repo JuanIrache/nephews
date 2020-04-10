@@ -12,12 +12,10 @@
   align-items: center;
   flex-direction: column;
   .client-content {
-    background-color: white;
     padding: 2rem;
-    box-shadow: 0px 0px 10px rgb(184, 184, 184);
+    border: 1px solid white;
     @media screen and (max-width: 992px) {
       background-color: $light;
-      box-shadow: none;
     }
 
     .number {
