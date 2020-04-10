@@ -5,7 +5,9 @@ var mSchema = new Schema({
   name: { type: String, required: true },
   lastName: { type: String, required: true },
   phone: { type: String, required: true, unique: true },
-  valid: Boolean
+  valid: Boolean,
+  skills: [String],
+  languages: [String]
 });
 
 module.exports = mongoose.model('Provider', mSchema);
