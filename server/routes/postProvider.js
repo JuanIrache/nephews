@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
       // Delete if already existing
       await Provider.deleteOne({ phone }).exec();
 
-      await Provider.create({ _id, name, lastName, phone, valid: false });
+      await Provider.create({ ...req.body, _id, phone, valid: false });
 
       const body = `Benvingut a nebots. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}?action=validate`;
 
