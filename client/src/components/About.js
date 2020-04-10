@@ -15,6 +15,7 @@ export default () => (
         <li>Per què han desaparegut els canals de la televisió?</li>
         <li>Què puc fer si no em funciona internet?</li>
         <li>Com envio una foto amb el mòbil?</li>
+        <li>M'he de refiar d'aquest email extrany que he rebut?</li>
       </ul>
       <p>
         Els voluntaris que tinguin temps es poden inscriure i rebran una
