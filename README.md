@@ -4,6 +4,10 @@
 
 Made in React.
 
+Live version: [nebots.cat](https://nebots.cat)
+
+## Sections
+
 - "How does this work?" section for (both clients and providers).
 
 ### For clients
@@ -45,7 +49,6 @@ NodeJS/Express API
 - Add real hold message with music
 - Test with real people
 - Translate front end
-- Move to dedicated domain
 - Delete Call document when the client hangs up prematurely
 - Add real terms and conditions
 - Classify calls and providers by topic and language
