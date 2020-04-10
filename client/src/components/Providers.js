@@ -46,6 +46,7 @@ export default () => {
         setResult('fail');
       });
   };
+
   return (
     <div className="Providers">
       {result !== 'success' ? (
