@@ -6,7 +6,7 @@ Made in React.
 
 Live version: [nebots.cat](https://nebots.cat)
 
-## Sections
+### Sections
 
 - "How does this work?" section for (both clients and providers).
 
