@@ -46,12 +46,11 @@ NodeJS/Express API
 ## To-Do
 
 - Hide caller id
-- Test with real people
 - Translate front end
 - Delete Call document when the client hangs up prematurely
 - Add real terms and conditions
-- Classify calls and providers by topic and language
+- Classify calls by topic and language
 - Better error handling
 - Protect from brute force
-- Protect from smsing/calling expensive numbers
+- Protect from smsing/calling wrong numbers
 - Authenticate webhook endpoint
