@@ -2,6 +2,7 @@
 
 const Provider = require('../models/Provider');
 const getDate = require('../modules/getDate');
+const formatHTML = require('../modules/formatHTML');
 
 module.exports = async (req, res) => {
   try {
@@ -14,19 +15,21 @@ module.exports = async (req, res) => {
           provider.valid = true;
           await provider.save();
           console.log(`${getDate()} - Provider validated`);
-          return res.status(200).send('<h1>Compte validat correctament</h1>');
+          return res
+            .status(200)
+            .send(formatHTML('Compte validat correctament'));
         case 'delete':
           Provider.deleteOne({ _id: req.params.id }, () => {});
           console.log(`${getDate()} - Deleting provider`);
-          return res.status(200).send('<h1>Compte eliminat</h1>');
+          return res.status(200).send(formatHTML('Compte eliminat'));
         default:
-          return res.status(200).send('<h1>Què volies fer?</h1>');
+          return res.status(200).send(formatHTML('Què volies fer?'));
       }
     }
     console.error(`${getDate()} - Provider not found`);
-    return res.status(400).send('<h1>Alguna cosa ha anat malament</h1>');
+    return res.status(400).send(formatHTML('Alguna cosa ha anat malament'));
   } catch (error) {
     console.error(`${getDate()} - Error modifying Provider: ${error.message}`);
-    return res.status(500).send('<h1>Alguna cosa ha anat malament</h1>');
+    return res.status(500).send(formatHTML('Alguna cosa ha anat malament'));
   }
 };
