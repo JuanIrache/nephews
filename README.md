@@ -46,7 +46,6 @@ NodeJS/Express API
 ## To-Do
 
 - Hide caller id
-- Add real hold message with music
 - Test with real people
 - Translate front end
 - Delete Call document when the client hangs up prematurely
