@@ -46,6 +46,7 @@ NodeJS/Express API
 ## To-Do
 
 - Hide caller id
+- Service quality monitoring
 - Translate front end
 - Delete Call document when the client hangs up prematurely
 - Add real terms and conditions
