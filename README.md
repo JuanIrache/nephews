@@ -45,7 +45,6 @@ NodeJS/Express API
 
 ## To-Do
 
-- Update logo palette
 - Hide caller id
 - Add real hold message with music
 - Test with real people
