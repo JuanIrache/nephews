@@ -1,4 +1,4 @@
-# Nebots
+# nebots
 
 ## Front-end
 
