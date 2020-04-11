@@ -8,11 +8,12 @@
   align-items: center;
   justify-content: center;
   .container {
+    h4:first-of-type {
+      margin-top: 0;
+    }
+    margin: 1rem 0;
     padding: 3rem;
     border: 1px solid white;
-    @media screen and (max-width: 992px) {
-      border: none;
-    }
     line-height: 1.6rem;
     max-width: 50vw;
     text-align: justify;
@@ -20,6 +21,8 @@
       margin: 1rem 0;
     }
     @media screen and (max-width: 992px) {
+      border: none;
+      margin: 0;
       padding: 1rem 2rem;
       max-width: 80vw;
       ul {
