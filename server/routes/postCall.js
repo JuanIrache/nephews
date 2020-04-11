@@ -47,11 +47,7 @@ module.exports = async (req, res) => {
 
     // Prepare response for Twilio
     const twiml = new VoiceResponse();
-    twiml.say(
-      { voice: 'alice', language: 'ca-ES', loop: 0 },
-      'Gràcies per trucar a nebots. Estem buscant un voluntari que pugui donar-li un cop de mà. Si us plau, esperi.'
-    );
-    // twiml.play({}, 'https://demo.twilio.com/docs/classic.mp3');
+    twiml.play({ loop: 20 }, 'https://nebots.cat/gracies.mp3');
 
     // Render the response as XML in reply to the webhook request
     res.type('text/xml');
