@@ -92,127 +92,142 @@ export default () => {
 
           <div className="checkgroup">
             <label className="small">Idiomes</label>
-            <label className="check">
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="cat"
+                id="cat"
                 data-group="languages"
                 onChange={onChangeCheck}
-              />{' '}
-              Català
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="cat">Català</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="spa"
+                id="spa"
                 data-group="languages"
                 onChange={onChangeCheck}
-              />{' '}
-              Castellà
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="spa">Castellà</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="eng"
+                id="eng"
                 data-group="languages"
                 onChange={onChangeCheck}
-              />{' '}
-              Anglès
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="eng">Anglès</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="urd"
+                id="urd"
                 data-group="languages"
                 onChange={onChangeCheck}
-              />{' '}
-              Urdú
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="urd">Urdú</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="ara"
+                id="ara"
                 data-group="languages"
                 onChange={onChangeCheck}
-              />{' '}
-              Àrab
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="ara">Àrab</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="chi"
+                id="chi"
                 data-group="languages"
                 onChange={onChangeCheck}
-              />{' '}
-              Xinès
-            </label>
+              />
+              <label htmlFor="chi">Xinès</label>
+            </div>
           </div>
 
           <div className="checkgroup">
             <label className="small">Coneixements</label>
-            <label className="check">
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="win"
+                id="win"
                 data-group="skills"
                 onChange={onChangeCheck}
-              />{' '}
-              Windows
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="win">Windows</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="mac"
+                id="mac"
                 data-group="skills"
                 onChange={onChangeCheck}
-              />{' '}
-              macOS
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="mac">macOS</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="and"
+                id="and"
                 data-group="skills"
                 onChange={onChangeCheck}
-              />{' '}
-              Android
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="and">Android</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="ios"
+                id="ios"
                 data-group="skills"
                 onChange={onChangeCheck}
-              />{' '}
-              iOS
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="ios">iOS</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="tvs"
+                id="tvs"
                 data-group="skills"
                 onChange={onChangeCheck}
-              />{' '}
-              Televisors
-            </label>
-            <label className="check">
+              />
+              <label htmlFor="tvs">Televisors</label>
+            </div>
+            <div className="checkbox">
               <input
                 type="checkbox"
                 name="pho"
+                id="pho"
                 data-group="skills"
                 onChange={onChangeCheck}
-              />{' '}
-              Fotografia
-            </label>
+              />
+              <label htmlFor="pho">Fotografia</label>
+            </div>
           </div>
 
-          <label>
-            <input type="checkbox" name="conditions" required /> Acceptes les{' '}
-            <Link to="/terms" target="_blank">
-              condicions d'ús
-            </Link>
-            ?
-          </label>
+          <div className="checkbox conditions">
+            <input type="checkbox" name="conditions" id="conditions" required />
+            <label htmlFor="conditions">
+              Acceptes les{' '}
+              <Link to="/terms" target="_blank">
+                condicions d'ús
+              </Link>
+              ?
+            </label>
+          </div>
           <input type="submit" value="Registrar" />
           {result === 'fail' && (
             <p className="danger">Error comunicant amb el servidor</p>
