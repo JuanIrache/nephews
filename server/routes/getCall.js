@@ -7,7 +7,12 @@ const Call = require('../models/Call');
 const getDate = require('../modules/getDate');
 const formatHTML = require('../modules/formatHTML');
 
-const { NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN, NEBOTS_SERVER } = process.env;
+const {
+  NEBOTS_TWACCOUNTSID,
+  NEBOTS_TWAUTHTOKEN,
+  NEBOTS_SERVER,
+  NEBOTS_TWPROXYNUM
+} = process.env;
 
 const tw = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
 
@@ -37,7 +42,8 @@ module.exports = async (req, res) => {
     if (confirm) {
       const response = new VoiceResponse();
 
-      response.dial(provider.phone);
+      const dial = response.dial({ callerId: NEBOTS_TWPROXYNUM });
+      dial.number(provider.phone);
 
       tw.calls(call.callSid).update({ twiml: response.toString() });
 
