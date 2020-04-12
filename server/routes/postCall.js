@@ -39,7 +39,14 @@ module.exports = async (req, res) => {
     providers = await Provider.find({ valid: true }).exec();
 
     for (const provider of providers) {
-      const body = `Hola ${provider.name}, una persona necessita la teva ajuda. Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/call/${_id}?provider=${provider._id}`;
+      const body = `Hola ${provider.name}, una persona necessita la teva ajuda.
+      
+      Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/call/${_id}?provider=${provider._id}
+      
+      BAIXA del servei: ${NEBOTS_SERVER}/provider/${provider.id}?action=delete`.replace(
+        / {2,}/g,
+        ''
+      );
 
       // console.log(body);
       tw.messages.create({ body, from: NEBOTS_TWFROM, to: provider.phone });
