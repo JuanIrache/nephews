@@ -1,20 +1,20 @@
 # nebots
 
+Live version: [nebots.cat](https://nebots.cat)
+
 ## Front-end
 
 Made in React.
-
-Live version: [nebots.cat](https://nebots.cat)
 
 ### Sections
 
 - "How does this work?" section for (both clients and providers).
 
-### For clients
+#### For clients
 
 - A simple phone number they can call to for basic general tech support. Problems like the tv channels missing, the Internet not working, not being able to send or open an email, not knowing how to take a photo...
 
-### For providers
+#### For providers
 
 - A signup form with a phone number input.
 
