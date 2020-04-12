@@ -13,11 +13,13 @@ html {
   }
   min-height: 100%;
   .danger {
+    font-weight: bold;
     color: $light;
     background-color: $danger;
     padding: 0.3rem;
   }
   .success {
+    font-weight: bold;
     color: $light;
     background-color: $dark;
     padding: 0.3rem;
