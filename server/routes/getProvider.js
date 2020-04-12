@@ -8,9 +8,8 @@ const { NEBOTS_SERVER } = process.env;
 
 module.exports = async (req, res) => {
   try {
-    const provider = await Provider.findOne({
-      _id: req.params.id
-    }).exec();
+    const { id: _id } = req.params;
+    const provider = await Provider.findOne({ _id }).exec();
     if (provider) {
       const { confirm, action } = req.query;
       if (!confirm) {
