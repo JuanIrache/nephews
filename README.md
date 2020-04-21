@@ -45,6 +45,8 @@ NodeJS/Express API
 
 ## To-Do
 
+- Only validate after a short period of time
+- Bring back validation/confirmation keys?
 - Allow provider to set busy or available times
 - Service quality monitoring
 - Translate front end
