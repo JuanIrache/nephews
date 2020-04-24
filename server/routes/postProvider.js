@@ -1,4 +1,5 @@
 // Creates a Provider after a request from the front-end and sends an SMS validation
+const ph = require('phone');
 
 const Provider = require('../models/Provider');
 
@@ -17,8 +18,9 @@ const {
 const tw = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
 
 module.exports = async (req, res) => {
-  let { name, lastName, phone } = req.body || {};
-  if (name && lastName && phone) {
+  let { name, lastName, phone, country } = req.body || {};
+
+  if (name && lastName && phone && country) {
     try {
       // Create letters-only unique ID
       let _id = generateKey(12);
@@ -26,9 +28,11 @@ module.exports = async (req, res) => {
         _id = generateKey(12);
       }
 
-      // Add Spanish prefix if missing
-      if (phone.slice(0, 3) != '+34' && phone.slice(0, 4) != '0034') {
-        phone = '+34' + phone;
+      //Validate phone number
+      phone = ph(phone, country)[0];
+      if (!phone) {
+        console.error(`${getDate()} - Bad phone number`);
+        return res.sendStatus(400);
       }
 
       // Delete if already existing

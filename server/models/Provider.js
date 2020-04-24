@@ -7,6 +7,7 @@ var mSchema = new Schema({
   name: { type: String, required: true },
   lastName: { type: String, required: true },
   phone: { type: String, required: true, unique: true },
+  country: String,
   valid: Boolean,
   skills: [String],
   languages: [String]

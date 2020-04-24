@@ -1,4 +1,5 @@
 // Receives the delete Provider request and sends a confirmation SMS
+const ph = require('phone');
 
 const Provider = require('../models/Provider');
 const getDate = require('../modules/getDate');
@@ -18,9 +19,11 @@ module.exports = async (req, res) => {
   let { phone } = req.body || {};
   if (phone) {
     try {
-      // Add Spanish prefix if missing
-      if (phone.slice(0, 3) != '+34' && phone.slice(0, 4) != '0034') {
-        phone = '+34' + phone;
+      // Validate phone number
+      phone = ph(phone, country)[0];
+      if (!phone) {
+        console.error(`${getDate()} - Bad phone number`);
+        return res.sendStatus(400);
       }
 
       const provider = await Provider.findOne({ phone }).exec();
