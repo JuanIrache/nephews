@@ -45,6 +45,7 @@ NodeJS/Express API
 
 ## To-Do
 
+- Write proper readme.md
 - Customize mp3 response
 - Implement voice recognition to determine call language and topic
 - Let volunteers listen to need before accepting call
