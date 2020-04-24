@@ -21,49 +21,6 @@
     h3 {
       margin-top: 0;
     }
-    .checkbox {
-      display: inline-block;
-      &.conditions {
-        margin-top: 1rem;
-      }
-      label {
-        position: relative;
-        margin-right: 1rem;
-        font-size: 1rem;
-        &::before {
-          content: '';
-          display: inline-block;
-          height: 0.7rem;
-          width: 0.7rem;
-          border: 1px solid;
-          margin-right: 0.2rem;
-          background-color: white;
-        }
-        &::after {
-          position: absolute;
-          left: 0.1rem;
-          top: 0.11rem;
-          content: '';
-          display: inline-block;
-          height: 0.4rem;
-          width: 0.6rem;
-          border-left: 2px solid;
-          border-bottom: 2px solid;
-          transform: rotate(-45deg);
-        }
-      }
-      input[type='checkbox'] {
-        & + label::after {
-          content: none;
-        }
-        &:checked + label::after {
-          content: '';
-        }
-        &:focus + label::before {
-          outline: $medium auto 5px;
-        }
-      }
-    }
     label {
       display: block;
       &.small {

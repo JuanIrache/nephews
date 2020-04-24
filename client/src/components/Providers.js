@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import Checkbox from './Checkbox';
+import languages from '../data/languages';
+import skills from '../data/skills';
 import '../style/Providers.scss';
 
 export default () => {
@@ -93,110 +96,26 @@ export default () => {
 
           <div className="checkgroup">
             <label className="small">Languages</label>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="eng"
-                id="eng"
-                data-group="languages"
+            {languages.map(l => (
+              <Checkbox
+                key={l.code}
+                {...l}
+                group="languages"
                 onChange={onChangeCheck}
               />
-              <label htmlFor="eng">English</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="spa"
-                id="spa"
-                data-group="languages"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="spa">Spanish</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="fra"
-                id="fra"
-                data-group="languages"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="fra">French</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="chi"
-                id="chi"
-                data-group="languages"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="chi">Mandarin</label>
-            </div>
+            ))}
           </div>
 
           <div className="checkgroup">
             <label className="small">Skills</label>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="win"
-                id="win"
-                data-group="skills"
+            {skills.map(s => (
+              <Checkbox
+                key={s.code}
+                {...s}
+                group="skills"
                 onChange={onChangeCheck}
               />
-              <label htmlFor="win">Windows</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="mac"
-                id="mac"
-                data-group="skills"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="mac">macOS</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="and"
-                id="and"
-                data-group="skills"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="and">Android</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="ios"
-                id="ios"
-                data-group="skills"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="ios">iOS</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="tvs"
-                id="tvs"
-                data-group="skills"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="tvs">TV</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="pho"
-                id="pho"
-                data-group="skills"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="pho">Photography</label>
-            </div>
+            ))}
           </div>
 
           <div className="checkbox conditions">
