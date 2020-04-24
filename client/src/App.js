@@ -15,7 +15,7 @@ export default () => (
     <Router basename={'/'}>
       <header>
         <Link to="/">
-          <h1>newphews</h1>
+          <h1>nephews</h1>
           <h2>assistència tècnica humana</h2>
         </Link>
       </header>
