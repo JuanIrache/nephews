@@ -45,6 +45,10 @@ NodeJS/Express API
 
 ## To-Do
 
+- Translate
+- Create dedicated db name with variable
+- Add placeholder terms and conditions
+- Use variable for mp3 response
 - Only validate after a short period of time
 - Bring back validation/confirmation keys?
 - Allow provider to set busy or available times
