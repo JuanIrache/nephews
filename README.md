@@ -45,8 +45,7 @@ NodeJS/Express API
 
 ## To-Do
 
-- Translate
-- Create dedicated db name with variable
+- Phone prefixes and validation
 - Add placeholder terms and conditions
 - Use variable for mp3 response
 - Publish in temp site
