@@ -6,11 +6,14 @@ import languages from '../data/languages';
 import skills from '../data/skills';
 import '../style/Providers.scss';
 
+let cpp = require('country-phone-prefix');
+
 export default () => {
   const [form, setForm] = useState({
     name: '',
     lastName: '',
     phone: '',
+    country: '',
     languages: [],
     skills: []
   });
@@ -82,17 +85,43 @@ export default () => {
             required
           />
 
-          <label htmlFor="phone" className="small">
-            Mobile phone
-          </label>
-          <input
-            type="tel"
-            name="phone"
-            id="phone"
-            value={form.phone}
-            onChange={onChange}
-            required
-          />
+          <div className="row">
+            <div className="col">
+              <label htmlFor="country" className="small">
+                Country
+              </label>
+
+              <select
+                className="input"
+                name="country"
+                id="country"
+                value={form.country}
+                onChange={onChange}
+                required
+              >
+                <option key="n" value=""></option>
+                {Object.keys(cpp).map(k => (
+                  <option key={cpp[k].iso3} value={cpp[k].iso3}>
+                    {k + ' ' + cpp[k].prefix}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="col">
+              <label htmlFor="phone" className="small">
+                Mobile phone
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                value={form.phone}
+                onChange={onChange}
+                required
+              />
+            </div>
+          </div>
 
           <div className="checkgroup">
             <label className="small">Languages</label>
