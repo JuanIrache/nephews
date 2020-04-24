@@ -31,9 +31,9 @@ export default () => {
     <div className="Providers">
       {result !== 'success' ? (
         <form onSubmit={onSubmit}>
-          <h3>Si has registrat el teu contacte, aquí pots eliminar-lo</h3>
+          <h3>If you created an account, you can cancel it here</h3>
           <label htmlFor="phone" className="small">
-            Telèfon mòbil
+            Phone number
           </label>
           <input
             type="tel"
@@ -45,19 +45,23 @@ export default () => {
           />
           <input type="submit" value="Eliminar" />
           {result === 'fail' && (
-            <p className="danger">Error. Segur que el número és correcte?</p>
+            <p className="danger">
+              Error. Could you double check the phone number?
+            </p>
           )}
         </form>
       ) : (
-        <p className="success">Gràcies, aviat rebràs instruccions per SMS.</p>
+        <p className="success">
+          Thank you. You will soon receive instructions by SMS.
+        </p>
       )}
 
       <div className="links">
         <h4>
-          <Link to="/about">Com funciona?</Link>
+          <Link to="/about">How does this work??</Link>
         </h4>
         <h4>
-          <Link to="/providers">Registra't</Link>
+          <Link to="/providers">Sign up</Link>
         </h4>
       </div>
     </div>

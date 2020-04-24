@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
         return res.sendStatus(400);
       }
 
-      const body = `Per confirmar la baixa de nephews, segueix aquest enllaç ${NEBOTS_SERVER}/provider/${provider._id}?action=delete`;
+      const body = `Please follow this link to cancel your nephews account ${NEBOTS_SERVER}/provider/${provider._id}?action=delete`;
 
       // console.log(body);
 

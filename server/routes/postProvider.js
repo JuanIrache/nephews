@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
 
       await Provider.create({ ...req.body, _id, phone, valid: false });
 
-      const body = `Benvingut a nephews. Segueix aquest enllaç per confirmar el teu compte ${NEBOTS_SERVER}/provider/${_id}?action=validate`;
+      const body = `Welcome to nephews. Follow this link to confirm you account ${NEBOTS_SERVER}/provider/${_id}?action=validate`;
 
       // console.log(body);
 

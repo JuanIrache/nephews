@@ -52,10 +52,11 @@ export default () => {
       {result !== 'success' ? (
         <form onSubmit={onSubmit}>
           <h3>
-            Registra el teu telèfon per ajudar a qui necessiti suport tècnic
+            Sign up with your phone number and help people in need of basic tech
+            support
           </h3>
           <label htmlFor="name" className="small">
-            Nom
+            Name
           </label>
           <input
             type="text"
@@ -67,7 +68,7 @@ export default () => {
           />
 
           <label htmlFor="lastName" className="small">
-            Cognoms
+            Last name
           </label>
           <input
             type="text"
@@ -79,7 +80,7 @@ export default () => {
           />
 
           <label htmlFor="phone" className="small">
-            Telèfon mòbil
+            Mobile phone
           </label>
           <input
             type="tel"
@@ -91,16 +92,16 @@ export default () => {
           />
 
           <div className="checkgroup">
-            <label className="small">Idiomes</label>
+            <label className="small">Languages</label>
             <div className="checkbox">
               <input
                 type="checkbox"
-                name="cat"
-                id="cat"
+                name="eng"
+                id="eng"
                 data-group="languages"
                 onChange={onChangeCheck}
               />
-              <label htmlFor="cat">Català</label>
+              <label htmlFor="eng">English</label>
             </div>
             <div className="checkbox">
               <input
@@ -110,37 +111,17 @@ export default () => {
                 data-group="languages"
                 onChange={onChangeCheck}
               />
-              <label htmlFor="spa">Castellà</label>
+              <label htmlFor="spa">Spanish</label>
             </div>
             <div className="checkbox">
               <input
                 type="checkbox"
-                name="eng"
-                id="eng"
+                name="fra"
+                id="fra"
                 data-group="languages"
                 onChange={onChangeCheck}
               />
-              <label htmlFor="eng">Anglès</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="urd"
-                id="urd"
-                data-group="languages"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="urd">Urdú</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="checkbox"
-                name="ara"
-                id="ara"
-                data-group="languages"
-                onChange={onChangeCheck}
-              />
-              <label htmlFor="ara">Àrab</label>
+              <label htmlFor="fra">French</label>
             </div>
             <div className="checkbox">
               <input
@@ -150,12 +131,12 @@ export default () => {
                 data-group="languages"
                 onChange={onChangeCheck}
               />
-              <label htmlFor="chi">Xinès</label>
+              <label htmlFor="chi">Mandarin</label>
             </div>
           </div>
 
           <div className="checkgroup">
-            <label className="small">Coneixements</label>
+            <label className="small">Skills</label>
             <div className="checkbox">
               <input
                 type="checkbox"
@@ -204,7 +185,7 @@ export default () => {
                 data-group="skills"
                 onChange={onChangeCheck}
               />
-              <label htmlFor="tvs">Televisors</label>
+              <label htmlFor="tvs">TV</label>
             </div>
             <div className="checkbox">
               <input
@@ -214,35 +195,37 @@ export default () => {
                 data-group="skills"
                 onChange={onChangeCheck}
               />
-              <label htmlFor="pho">Fotografia</label>
+              <label htmlFor="pho">Photography</label>
             </div>
           </div>
 
           <div className="checkbox conditions">
             <input type="checkbox" name="conditions" id="conditions" required />
             <label htmlFor="conditions">
-              Acceptes les{' '}
+              Do you accept the{' '}
               <Link to="/terms" target="_blank">
-                condicions d'ús
+                terms and conditions
               </Link>
               ?
             </label>
           </div>
           <input type="submit" value="Registrar" />
           {result === 'fail' && (
-            <p className="danger">Error comunicant amb el servidor</p>
+            <p className="danger">Error communicating with server</p>
           )}
         </form>
       ) : (
-        <p className="success">Gràcies, aviat rebràs instruccions per SMS.</p>
+        <p className="success">
+          Thank you. You will soon receive instructions by SMS.
+        </p>
       )}
 
       <div className="links">
         <h4>
-          <Link to="/about">Com funciona?</Link>
+          <Link to="/about">How does this work?</Link>
         </h4>
         <h4>
-          <Link to="/delete">Donar-se de baixa</Link>
+          <Link to="/delete">Cancel my account</Link>
         </h4>
       </div>
     </div>

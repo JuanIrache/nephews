@@ -31,12 +31,12 @@ module.exports = async (req, res) => {
       console.error(`${getDate()} - Call not found`);
       return res
         .status(200)
-        .send(formatHTML('Gràcies, la trucada ja ha estat atesa'));
+        .send(formatHTML('The call has already been answered. Thank you'));
     }
 
     if (!provider) {
       console.error(`${getDate()} - Provider not found`);
-      return res.status(400).send(formatHTML('Alguna cosa ha anat malament'));
+      return res.status(400).send(formatHTML('Something went wrong'));
     }
 
     if (confirm) {
@@ -55,7 +55,7 @@ module.exports = async (req, res) => {
         .status(200)
         .send(
           formatHTML(
-            `Gràcies. Si l'usuari segueix en línia iniciarem la connexió`
+            `Thank you. If the user is still waiting we will forward you the call`
           )
         );
     } else {
@@ -63,7 +63,7 @@ module.exports = async (req, res) => {
       return res.status(200).send(
         formatHTML(
           `<a style="color:#003146" href="${NEBOTS_SERVER}/call/${call._id}?provider=${provider._id}&confirm=true">
-            Fes click aquí per confirmar la trucada
+            Click here to confirm the call
             </a>`
         )
       );
@@ -74,7 +74,7 @@ module.exports = async (req, res) => {
       .status(500)
       .send(
         formatHTML(
-          'Connexió no establerta. Pot ser que ja no calgui la teva ajuda. Gràcies!'
+          'Connection not made. Your help is probably no longer needed. Thank you'
         )
       );
   }

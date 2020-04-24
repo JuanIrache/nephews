@@ -39,11 +39,11 @@ module.exports = async (req, res) => {
     providers = await Provider.find({ valid: true }).exec();
 
     for (const provider of providers) {
-      const body = `Hola ${provider.name}, una persona necessita la teva ajuda.
+      const body = `Hello ${provider.name}, someone needs your help.
       
-      Si pots, segueix aquest enllaç per confirmar la trucada ${NEBOTS_SERVER}/call/${_id}?provider=${provider._id}
+      If you are available, follow this link to respond to the call ${NEBOTS_SERVER}/call/${_id}?provider=${provider._id}
       
-      BAIXA del servei: ${NEBOTS_SERVER}/provider/${provider.id}?action=delete`.replace(
+      CANCEL your account: ${NEBOTS_SERVER}/provider/${provider.id}?action=delete`.replace(
         / {2,}/g,
         ''
       );

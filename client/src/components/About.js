@@ -6,27 +6,27 @@ export default () => (
   <div className="Page">
     <div className="container">
       <p>
-        <strong>nephews</strong> és un portal que permet a les persones poc
-        acostumades a la tecnologia fer consultes telefòniques amb voluntaris
-        (nephews) que en saben més.
+        <strong>nephews</strong> is a service that allows people that struggle
+        with tech get the support they need from volunteers (nephews) with
+        better tech skills.
       </p>
-      <p>Per exemple </p>
+      <p>For example </p>
       <ul>
-        <li>Per què han desaparegut els canals de la televisió?</li>
-        <li>Què puc fer si no em funciona internet?</li>
-        <li>Com envio una foto amb el mòbil?</li>
-        <li>M'he de refiar d'aquest email extrany que he rebut?</li>
+        <li>Why did the TV channels disappear?</li>
+        <li>What should I do if the Internet is not working?</li>
+        <li>How can I send a photo with my phone?</li>
+        <li>Should I trust this strange email I just received?</li>
       </ul>
       <p>
-        Els voluntaris que tinguin temps es poden inscriure i rebran una
-        notificació quan algú necessiti assistència. Si en aquell moment poden
-        atendre la trucada, només han d'obrir la notificació i la trucada els
-        serà redirigida al mòbil.
+        Volunteers with some time to spare can sign and they will be notified
+        when someone needs support. If they are available, they just have to
+        accept the notification and the call will be forwarded to them.
       </p>
       <p>
-        No cal instal·lar res ni ser un expert informàtic. Només tenir per la mà
-        els aparells habituals de cada dia. És més o menys l'ajuda que ja doneu
-        als vostres pares o tietes, però per a gent que no té... nephews.
+        There is no need to install anything, and you don't have to be an expert
+        engineer. Knowing how everyday devices work is already of great use.
+        It's a bit like the TV and phone support you provide your parents or
+        aunties with, but for people with no... nephews.
       </p>
     </div>
   </div>
