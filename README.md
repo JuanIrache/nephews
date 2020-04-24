@@ -1,6 +1,6 @@
 # nephews
 
-Live version: [nebots.cat](https://nebots.cat)
+Live version: [nephews.tech](https://nephews.tech)
 
 ## Front-end
 
@@ -45,8 +45,7 @@ NodeJS/Express API
 
 ## To-Do
 
-- Use variable for mp3 response
-- Publish in temp site
+- Customize mp3 response
 - Implement voice recognition to determine call language and topic
 - Let volunteers listen to need before accepting call
 - Only validate sms after a short period of time
