@@ -5,183 +5,327 @@ import '../style/Page.scss';
 export default () => (
   <div className="Page">
     <div className="container">
-      <h4>Informació general de la seu electrònica o lloc web nebots.cat.</h4>
+      <p>Welcome to nephews - human tech support!</p>
+
       <p>
-        “nebots” (nebots.cat) és un domini de Juan Irache Duesca (en endavant,
-        el DESENVOLUPADOR) amb email app@prototyping.barcelona que aspira a
-        posar en contacte a persones amb dificultats per accedir a la tecnologia
-        amb voluntaris que els puguin ajudar.
+        These terms and conditions outline the rules and regulations for the use
+        of nephews's Website, located at http://prototyping.barcelona/nephews.
       </p>
-      <h4>Accés Usuaris</h4>
+
       <p>
-        L’accés i/o ús del “nebots.cat” atribueix la condició d’usuari i implica
-        l’acceptació de les condicions d’accés i ús que consten en aquest avís
-        legal, així com la política de privacitat i dades personals. Les citades
-        condicions seran d’aplicació independentment de les condicions generals
-        de contractació i de comerç electrònic que en el seu cas resultin
-        d’aplicació en les funcionalitats que ofereixi el portal. L’usuari es
-        compromet a utilitzar els serveis i la informació facilitada al
-        “nebots.cat” sota criteris de bona fe.
+        By accessing this website we assume you accept these terms and
+        conditions. Do not continue to use nephews - human tech support if you
+        do not agree to take all of the terms and conditions stated on this
+        page. Our Terms and Conditions were created with the help of the{' '}
+        <a href="https://www.termsandconditionsgenerator.com">
+          Terms And Conditions Generator
+        </a>{' '}
+        and the{' '}
+        <a href="https://www.privacypolicyonline.com/terms-conditions-generator/">
+          Free Terms & Conditions Generator
+        </a>
+        .
       </p>
+
       <p>
-        L’accés al portal es gratuït. Cas de que en el futur existissin
-        funcionalitats o serveis subjectes al pagament d’un preu, es farien
-        constar les condicions d’ús.
+        The following terminology applies to these Terms and Conditions, Privacy
+        Statement and Disclaimer Notice and all Agreements: "Client", "You" and
+        "Your" refers to you, the person log on this website and compliant to
+        the Company’s terms and conditions. "The Company", "Ourselves", "We",
+        "Our" and "Us", refers to our Company. "Party", "Parties", or "Us",
+        refers to both the Client and ourselves. All terms refer to the offer,
+        acceptance and consideration of payment necessary to undertake the
+        process of our assistance to the Client in the most appropriate manner
+        for the express purpose of meeting the Client’s needs in respect of
+        provision of the Company’s stated services, in accordance with and
+        subject to, prevailing law of Netherlands. Any use of the above
+        terminology or other words in the singular, plural, capitalization
+        and/or he/she or they, are taken as interchangeable and therefore as
+        referring to same.
       </p>
+
+      <h4>
+        <strong>Cookies</strong>
+      </h4>
+
       <p>
-        En cas que per utilitzar determinades funcions o serveis es precisi el
-        registre de l’usuari, aquest s’efectuarà mitjançant formularis de
-        recapta de dades i amb subjecció a les prevencions de la legislació de
-        protecció de dades personals que es descriuen en aquest avis legal.
+        We employ the use of cookies. By accessing nephews - human tech support,
+        you agreed to use cookies in agreement with the nephews's Privacy
+        Policy.
       </p>
-      <p>Protecció dels drets de propietat intel·lectual i industrial</p>
+
       <p>
-        Son titularitat del DESENVOLUPADOR els drets de Propietat Intel·lectual
-        i Industrial del “nebots.cat”, que inclou els continguts i elements
-        gràfics, el seu codi font, disseny, estructura de navegació, bases de
-        dades i altres elements que formen part del lloc web. Per tant,
-        correspon en exclusiva al DESENVOLUPADOR l’exercici, en exclusiva, dels
-        drets d’explotació en qualsevol forma i, en concret, dels drets de
-        reproducció, distribució, comunicació pública i transformació. Qualsevol
-        ús o reproducció que els usuaris facin d’aquests continguts, o d’altres
-        que es puguin incloure en el futur, s’han de fer seguint les previsions
-        i respectant les limitacions de la normativa de Propietat Intel·lectual
-        i en qualsevol cas amb l’autorització del DESENVOLUPADOR, sense
-        perjudici dels límits que estableix el Reial Decret 1/1996, del 12
-        d’abril, pel qual s’aprova el text refós de la Llei de propietat
-        intel·lectual .
+        Most interactive websites use cookies to let us retrieve the user’s
+        details for each visit. Cookies are used by our website to enable the
+        functionality of certain areas to make it easier for people visiting our
+        website. Some of our affiliate/advertising partners may also use
+        cookies.
       </p>
-      <h4>Reserva de drets</h4>
+
+      <h4>
+        <strong>License</strong>
+      </h4>
+
       <p>
-        El DESENVOLUPADOR explicita una reserva de drets amb caràcter general
-        respecte del conjunt dels continguts difosos en el lloc web que són
-        objecte de propietat intel·lectual i industrial. D’acord amb el previst
-        a l’article 32 del test refós de la Llei de Propietat intel·lectual, el
-        DESENVOLUPADOR s’oposa expressament a la utilització de qualsevol dels
-        continguts de “nebots.cat” en qualsevol format, amb la finalitat de fer
-        ressenyes o revistes de premsa amb finalitat comercial, sense la prèvia
-        autorització expressa del DESENVOLUPADOR.
+        Unless otherwise stated, nephews and/or its licensors own the
+        intellectual property rights for all material on nephews - human tech
+        support. All intellectual property rights are reserved. You may access
+        this from nephews - human tech support for your own personal use
+        subjected to restrictions set in these terms and conditions.
       </p>
+
+      <p>You must not:</p>
+      <ul>
+        <li>Republish material from nephews - human tech support</li>
+        <li>
+          Sell, rent or sub-license material from nephews - human tech support
+        </li>
+        <li>
+          Reproduce, duplicate or copy material from nephews - human tech
+          support
+        </li>
+        <li>Redistribute content from nephews - human tech support</li>
+      </ul>
+
+      <p>This Agreement shall begin on the date hereof.</p>
+
       <p>
-        Aquest avís legal no suposa cap cessió de drets a favor de l’usuari en
-        relació a cap dels elements integrants de la web o dels seus continguts.
+        Parts of this website offer an opportunity for users to post and
+        exchange opinions and information in certain areas of the website.
+        nephews does not filter, edit, publish or review Comments prior to their
+        presence on the website. Comments do not reflect the views and opinions
+        of nephews,its agents and/or affiliates. Comments reflect the views and
+        opinions of the person who post their views and opinions. To the extent
+        permitted by applicable laws, nephews shall not be liable for the
+        Comments or for any liability, damages or expenses caused and/or
+        suffered as a result of any use of and/or posting of and/or appearance
+        of the Comments on this website.
       </p>
-      <p>No s’autoritza en cap cas:</p>
+
+      <p>
+        nephews reserves the right to monitor all Comments and to remove any
+        Comments which can be considered inappropriate, offensive or causes
+        breach of these Terms and Conditions.
+      </p>
+
+      <p>You warrant and represent that:</p>
+
       <ul>
         <li>
-          L’extracció d’elements del lloc web que causi perjudici al
-          DESENVOLUPADOR, conforme a les disposicions vigents.
-        </li>
-        <li>L’ús comercial dels continguts del lloc web “nebots.cat”.</li>
-        <li>
-          L’ús de marques o signes distintius, logotips, combinacions de colors,
-          estructura, disseny i en general símbols distintius de qualsevol
-          naturalesa, propietat del DESENVOLUPADOR, sense el coneixement i
-          l’autorització corresponent del DESENVOLUPADOR.
+          You are entitled to post the Comments on our website and have all
+          necessary licenses and consents to do so;
         </li>
         <li>
-          L’ús de continguts en activitats il·lícites, il·legals o contràries a
-          la bona fe i l’ordre públic.
+          The Comments do not invade any intellectual property right, including
+          without limitation copyright, patent or trademark of any third party;
         </li>
         <li>
-          Difondre continguts o propaganda de caràcter racista o xenòfob,
-          pornogràfic, il·legal o que atempti contra els drets humans.
+          The Comments do not contain any defamatory, libelous, offensive,
+          indecent or otherwise unlawful material which is an invasion of
+          privacy
         </li>
         <li>
-          Provocar danys en els sistemes físics i lògics del DESENVOLUPADOR,
-          dels seus proveïdors o de terceres persones; introduir o difondre a la
-          xarxa virus informàtics o altres sistemes físics o lògics que siguin
-          susceptibles de provocar danys anteriorment esmentats.
-        </li>
-        <li>
-          Intentar accedir i, en el seu cas, utilitzar els comptes de correu
-          electrònic d’altres usuaris i modificar o manipular els seus
-          missatges.
-        </li>
-        <li>
-          L’usuari podrà visualitzar els continguts d’aquest portal, copiar-los,
-          imprimir-los en el seu ordenador o qualsevol altre suport amb destí
-          exclusiu al seu us personal i privat.
+          The Comments will not be used to solicit or promote business or custom
+          or present commercial activities or unlawful activity.
         </li>
       </ul>
-      <h4>Protecció de dades de caràcter personal</h4>
-      <p>Dades recollides a través de formularis</p>
+
       <p>
-        El DESENVOLUPADOR, com a responsable del lloc web, de conformitat amb el
-        que disposa el Reglament (UE) 2016/679, de 27 d’abril, relatiu a la
-        protecció de les persones físiques pel que fa al tractament de dades
-        personals (en endavant, «RGPD»), i la Llei 34/2002, de 11 de juliol, de
-        serveis de la societat de la informació i del comerç electrònic
-        (LSSICE), li informa que ha implantat les mesures de seguretat
-        necessàries, d’índole tècnica i organitzativa , per garantir i protegir
-        la confidencialitat, la integritat i la disponibilitat de les dades
-        introduïdes.
+        You hereby grant nephews a non-exclusive license to use, reproduce, edit
+        and authorize others to use, reproduce and edit any of your Comments in
+        any and all forms, formats or media.
       </p>
-      <p>Responsabilitat amb relació als continguts</p>
+
+      <h4>
+        <strong>Hyperlinking to our Content</strong>
+      </h4>
+
       <p>
-        el DESENVOLUPADOR es reserva el dret de modificar els continguts del web
-        i d’eliminar-los, així com també de limitar o impedir l’accés ja sigui
-        temporalment o definitiva, sense notificació prèvia.
+        The following organizations may link to our Website without prior
+        written approval:
       </p>
+
+      <ul>
+        <li>Government agencies;</li>
+        <li>Search engines;</li>
+        <li>News organizations;</li>
+        <li>
+          Online directory distributors may link to our Website in the same
+          manner as they hyperlink to the Websites of other listed businesses;
+          and
+        </li>
+        <li>
+          System wide Accredited Businesses except soliciting non-profit
+          organizations, charity shopping malls, and charity fundraising groups
+          which may not hyperlink to our Web site.
+        </li>
+      </ul>
+
       <p>
-        el DESENVOLUPADOR no es fa responsable de l’accés tècnic, la informació
-        o dels continguts d’altres pàgines web a les quals remet o amb les quals
-        es pugui enllaçar des del portal “nebots.cat”.
+        These organizations may link to our home page, to publications or to
+        other Website information so long as the link: (a) is not in any way
+        deceptive; (b) does not falsely imply sponsorship, endorsement or
+        approval of the linking party and its products and/or services; and (c)
+        fits within the context of the linking party’s site.
       </p>
+
       <p>
-        el DESENVOLUPADOR no s’identifica necessàriament amb les opinions
-        expressades pels seus col·laboradors.
+        We may consider and approve other link requests from the following types
+        of organizations:
       </p>
+
+      <ul>
+        <li>commonly-known consumer and/or business information sources;</li>
+        <li>dot.com community sites;</li>
+        <li>associations or other groups representing charities;</li>
+        <li>online directory distributors;</li>
+        <li>internet portals;</li>
+        <li>accounting, law and consulting firms; and</li>
+        <li>educational institutions and trade associations.</li>
+      </ul>
+
       <p>
-        el DESENVOLUPADOR no es fa responsable dels actes, activitats i
-        esdeveniments organitzats per tercers dels quals s’informi al portal
-        “nebots.cat”, ni dels continguts de tercers (en especial seccions casos
-        d’èxit i vídeos).
+        We will approve link requests from these organizations if we decide
+        that: (a) the link would not make us look unfavorably to ourselves or to
+        our accredited businesses; (b) the organization does not have any
+        negative records with us; (c) the benefit to us from the visibility of
+        the hyperlink compensates the absence of nephews; and (d) the link is in
+        the context of general resource information.
       </p>
-      <h4>Dret d’exclusió</h4>
+
       <p>
-        el DESENVOLUPADOR es reserva el dret de denegar o retirar l’accés als
-        seus websites i/o els serveis oferts sense necessitat d’avís previ, a
-        instancia pròpia o d’un tercer, a aquells usuaris que incompleixin les
-        presents condicions generals.
+        These organizations may link to our home page so long as the link: (a)
+        is not in any way deceptive; (b) does not falsely imply sponsorship,
+        endorsement or approval of the linking party and its products or
+        services; and (c) fits within the context of the linking party’s site.
       </p>
-      <h4>Subscripcions</h4>
+
       <p>
-        La subscripció a productes que es facin a traves d’aquest portal
-        “nebots.cat” serà voluntària i suposarà l’acceptació de les condicions
-        que en cada cas s’estableixin i que l’usuari haurà d’acceptar
-        expressament. També implicarà l’acceptació per a rebre informació
-        comercial de productes i serveis del DESENVOLUPADOR. El fet de donar-se
-        d’alta en aquests serveis comporta l’autorització al DESENVOLUPADOR per
-        a aquest tipus de comunicacions, podent l’usuari revocar l’autorització
-        amb una comunicació per escrit en la forma que el DESENVOLUPADOR
-        indicarà en cada cas.
+        If you are one of the organizations listed in paragraph 2 above and are
+        interested in linking to our website, you must inform us by sending an
+        e-mail to nephews. Please include your name, your organization name,
+        contact information as well as the URL of your site, a list of any URLs
+        from which you intend to link to our Website, and a list of the URLs on
+        our site to which you would like to link. Wait 2-3 weeks for a response.
       </p>
-      <h4>Generalitats</h4>
+
+      <p>Approved organizations may hyperlink to our Website as follows:</p>
+
+      <ul>
+        <li>By use of our corporate name; or</li>
+        <li>By use of the uniform resource locator being linked to; or</li>
+        <li>
+          By use of any other description of our Website being linked to that
+          makes sense within the context and format of content on the linking
+          party’s site.
+        </li>
+      </ul>
+
       <p>
-        El DESENVOLUPADOR perseguirà l’incompliment de les presents condicions
-        així com qualsevol utilització indeguda de les seves websites exercint
-        totes les accions civils i penals que li puguin correspondre per dret.
+        No use of nephews's logo or other artwork will be allowed for linking
+        absent a trademark license agreement.
       </p>
+
+      <h4>
+        <strong>iFrames</strong>
+      </h4>
+
       <p>
-        El DESENVOLUPADOR no pot garantir que el portal i el servidor estiguin
-        lliures de virus pel que no es fa responsable dels danys o perjudicis
-        que es puguin causar per aquestes anomalies o qualsevol altra d’indole
-        tècnica.
+        Without prior approval and written permission, you may not create frames
+        around our Webpages that alter in any way the visual presentation or
+        appearance of our Website.
       </p>
-      <h4>Modificació de les presents condicions i durada</h4>
+
+      <h4>
+        <strong>Content Liability</strong>
+      </h4>
+
       <p>
-        El DESENVOLUPADOR podrà modificar en qualsevol moment les condicions
-        aquí determinades, essent degudament publicades com aquí apareixen. La
-        vigència de les citades condicions anirà en funció de la seva exposició
-        i estaran vigents fins que siguin modificades per altres degudament
-        publicades.
+        We shall not be hold responsible for any content that appears on your
+        Website. You agree to protect and defend us against all claims that is
+        rising on your Website. No link(s) should appear on any Website that may
+        be interpreted as libelous, obscene or criminal, or which infringes,
+        otherwise violates, or advocates the infringement or other violation of,
+        any third party rights.
       </p>
-      <h4>Legislació aplicable i jurisdicció</h4>
+
+      <h4>
+        <strong>Your Privacy</strong>
+      </h4>
+
+      <p>Please read Privacy Policy</p>
+
+      <h4>
+        <strong>Reservation of Rights</strong>
+      </h4>
+
       <p>
-        La relació entre el DESENVOLUPADOR i els usuaris es regirà per la
-        normativa espanyola vigent i qualsevol controvèrsia se sotmetrà als
-        jutjats i tribunals de la ciutat de Barcelona.
+        We reserve the right to request that you remove all links or any
+        particular link to our Website. You approve to immediately remove all
+        links to our Website upon request. We also reserve the right to amen
+        these terms and conditions and it’s linking policy at any time. By
+        continuously linking to our Website, you agree to be bound to and follow
+        these linking terms and conditions.
+      </p>
+
+      <h4>
+        <strong>Removal of links from our website</strong>
+      </h4>
+
+      <p>
+        If you find any link on our Website that is offensive for any reason,
+        you are free to contact and inform us any moment. We will consider
+        requests to remove links but we are not obligated to or so or to respond
+        to you directly.
+      </p>
+
+      <p>
+        We do not ensure that the information on this website is correct, we do
+        not warrant its completeness or accuracy; nor do we promise to ensure
+        that the website remains available or that the material on the website
+        is kept up to date.
+      </p>
+
+      <h4>
+        <strong>Disclaimer</strong>
+      </h4>
+
+      <p>
+        To the maximum extent permitted by applicable law, we exclude all
+        representations, warranties and conditions relating to our website and
+        the use of this website. Nothing in this disclaimer will:
+      </p>
+
+      <ul>
+        <li>
+          limit or exclude our or your liability for death or personal injury;
+        </li>
+        <li>
+          limit or exclude our or your liability for fraud or fraudulent
+          misrepresentation;
+        </li>
+        <li>
+          limit any of our or your liabilities in any way that is not permitted
+          under applicable law; or
+        </li>
+        <li>
+          exclude any of our or your liabilities that may not be excluded under
+          applicable law.
+        </li>
+      </ul>
+
+      <p>
+        The limitations and prohibitions of liability set in this Section and
+        elsewhere in this disclaimer: (a) are subject to the preceding
+        paragraph; and (b) govern all liabilities arising under the disclaimer,
+        including liabilities arising in contract, in tort and for breach of
+        statutory duty.
+      </p>
+
+      <p>
+        As long as the website and the information and services on the website
+        are provided free of charge, we will not be liable for any loss or
+        damage of any nature.
       </p>
     </div>
   </div>

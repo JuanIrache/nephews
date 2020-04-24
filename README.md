@@ -46,7 +46,6 @@ NodeJS/Express API
 ## To-Do
 
 - Phone prefixes and validation
-- Add placeholder terms and conditions
 - Use variable for mp3 response
 - Publish in temp site
 - Implement voice recognition to determine call language and needs
