@@ -128,7 +128,7 @@ export default () => {
               ?
             </label>
           </div>
-          <input type="submit" value="Registrar" />
+          <input type="submit" value="Sign up" />
           {result === 'fail' && (
             <p className="danger">Error communicating with server</p>
           )}

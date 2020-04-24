@@ -9,7 +9,7 @@ export default () => (
 
       <p>
         These terms and conditions outline the rules and regulations for the use
-        of nephews's Website, located at http://prototyping.barcelona/nephews.
+        of nephews's Website, located at https://prototyping.barcelona/nephews.
       </p>
 
       <p>

@@ -43,7 +43,7 @@ export default () => {
             onChange={onChange}
             required
           />
-          <input type="submit" value="Eliminar" />
+          <input type="submit" value="Delete account" />
           {result === 'fail' && (
             <p className="danger">
               Error. Could you double check the phone number?
