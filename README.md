@@ -45,19 +45,16 @@ NodeJS/Express API
 
 ## To-Do
 
-- Phone prefixes and validation
 - Use variable for mp3 response
 - Publish in temp site
-- Implement voice recognition to determine call language and needs
+- Implement voice recognition to determine call language and topic
 - Let volunteers listen to need before accepting call
-- Only validate after a short period of time
-- Bring back validation/confirmation keys?
+- Only validate sms after a short period of time
+- Bring back validation/confirmation keys
 - Allow provider to set busy or available times
-- Service quality monitoring
-- Translate front end
+- Service quality monitoring (including recording calls with the necessary legal background)
 - Delete Call document when the client hangs up prematurely
 - Add real terms and conditions
-- Classify calls by topic and language
 - Better error handling
 - Protect from brute force
 - Protect from smsing/calling wrong numbers
