@@ -1,4 +1,4 @@
-# nebots
+# newphews
 
 Live version: [nebots.cat](https://nebots.cat)
 

@@ -6,9 +6,9 @@ export default () => (
   <div className="Page">
     <div className="container">
       <p>
-        <strong>nebots</strong> és un portal que permet a les persones poc
+        <strong>newphews</strong> és un portal que permet a les persones poc
         acostumades a la tecnologia fer consultes telefòniques amb voluntaris
-        (nebots) que en saben més.
+        (newphews) que en saben més.
       </p>
       <p>Per exemple </p>
       <ul>
@@ -26,7 +26,7 @@ export default () => (
       <p>
         No cal instal·lar res ni ser un expert informàtic. Només tenir per la mà
         els aparells habituals de cada dia. És més o menys l'ajuda que ja doneu
-        als vostres pares o tietes, però per a gent que no té... nebots.
+        als vostres pares o tietes, però per a gent que no té... newphews.
       </p>
     </div>
   </div>
