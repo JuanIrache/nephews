@@ -50,7 +50,7 @@ NodeJS/Express API
 - Add placeholder terms and conditions
 - Use variable for mp3 response
 - Publish in temp site
-- Implement voice recognition to determin call language and needs
+- Implement voice recognition to determine call language and needs
 - Let volunteers listen to need before accepting call
 - Only validate after a short period of time
 - Bring back validation/confirmation keys?
