@@ -7,10 +7,10 @@ export default ({ name, code, group, onChange }) => (
     <input
       type="checkbox"
       name={code}
-      id={code}
+      id={`checkbox-${code}`}
       data-group={group}
       onChange={onChange}
     />
-    <label htmlFor="eng">{name}</label>
+    <label htmlFor={`checkbox-${code}`}>{name}</label>
   </div>
 );
