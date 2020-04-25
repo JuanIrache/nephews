@@ -4,7 +4,7 @@ module.exports = [
   {
     name: 'Windows',
     code: 'win',
-    synonyms: ['pc'],
+    synonyms: ['pc', 'microsoft', 'acer'],
     generic: ['computer', 'laptop'],
     related: [
       'mouse',
