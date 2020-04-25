@@ -131,10 +131,10 @@ This template is open source and welcomes contributions.
 
 ## To-Do
 
-- Recreate call between From and accepted provider
 - Update readme with new flow
 - Testing
 - Customize mp3 response
+- Probably rename NEBOTS_TWSMS variable and delete NEBOTS_TWPROXYNUM
 - Enhance validation/confirmation with time-limited keys
 - Allow provider to set busy or available times
 - Support additional languages in transcriptions
