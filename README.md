@@ -141,7 +141,7 @@ This template is open source and welcomes contributions.
 - Use vocabulary databases and APIs to enhance topic filtering
 - Service quality monitoring (including recording calls with the necessary legal background)
 - Delete Call document when the client hangs up prematurely
-- Add real terms and conditions
+- Add real terms and conditions and legal docs
 - Better error handling
 - Protect from brute force
 - Protect from smsing/calling wrong numbers
