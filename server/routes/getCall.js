@@ -31,12 +31,16 @@ module.exports = async (req, res) => {
       console.error(`${getDate()} - Call not found`);
       return res
         .status(200)
-        .send(formatHTML('The call has already been answered. Thank you'));
+        .send(
+          formatHTML({ title: 'The call has already been answered. Thank you' })
+        );
     }
 
     if (!provider) {
       console.error(`${getDate()} - Provider not found`);
-      return res.status(400).send(formatHTML('Something went wrong'));
+      return res
+        .status(400)
+        .send(formatHTML({ title: 'Something went wrong' }));
     }
 
     if (confirm) {
@@ -51,13 +55,11 @@ module.exports = async (req, res) => {
 
       console.log(`${getDate()} - Establishing call`);
 
-      return res
-        .status(200)
-        .send(
-          formatHTML(
-            `Thank you. If the user is still waiting we will forward you the call`
-          )
-        );
+      return res.status(200).send(
+        formatHTML({
+          title: `Thank you. If the user is still waiting we will forward you the call`
+        })
+      );
     } else {
       console.log(`${getDate()} - Confirming call`);
       return res.status(200).send(
@@ -70,12 +72,11 @@ module.exports = async (req, res) => {
     }
   } catch (error) {
     console.error(`${getDate()} - Error establishing call: ${error.message}`);
-    return res
-      .status(500)
-      .send(
-        formatHTML(
+    return res.status(500).send(
+      formatHTML({
+        title:
           'Connection not made. Your help is probably no longer needed. Thank you'
-        )
-      );
+      })
+    );
   }
 };
