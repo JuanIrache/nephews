@@ -129,7 +129,6 @@ This template is open source and welcomes contributions.
 
 ## To-Do
 
-- Add conf examples
 - Customize mp3 response
 - Implement voice recognition to determine call language and topic
 - Let volunteers listen to need before accepting call
