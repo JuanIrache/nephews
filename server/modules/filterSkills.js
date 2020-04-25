@@ -5,8 +5,7 @@ const skills = require('../data/skills');
 // Find a matching term from an array in a text
 const matchElement = (arr, transcription) => {
   for (const elt of arr) {
-    console.log('checking', elt);
-    const reElt = new RegExp(`\b${elt.toLowerCase()}\b`);
+    const reElt = new RegExp(`\\b${elt.toLowerCase()}\\b`);
     if (reElt.test(transcription)) {
       return true;
     }
@@ -20,7 +19,7 @@ module.exports = transcription => {
 
   // Try matching names first
   skills.forEach(s => {
-    const reName = new RegExp(`\b${s.name.toLowerCase()}\b`);
+    const reName = new RegExp(`\\b${s.name.toLowerCase()}\\b`);
     if (reName.test(transcription)) filter.push(s.code);
     else {
       // Then synonyms
