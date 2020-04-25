@@ -131,17 +131,16 @@ This template is open source and welcomes contributions.
 
 ## To-Do
 
-- Customize mp3 response
-- Let volunteers listen to need before accepting call
 - Recreate call between From and accepted provider
 - Update readme with new flow
 - Testing
+- Customize mp3 response
 - Enhance validation/confirmation with time-limited keys
 - Allow provider to set busy or available times
 - Support additional languages in transcriptions
 - Use vocabulary databases and APIs to enhance topic filtering
 - Service quality monitoring (including recording calls with the necessary legal background)
-- Delete Call document when the client hangs up prematurely
+- Potentially allow multiple calls per user
 - Add real terms and conditions and legal docs
 - Better error handling
 - Protect from brute force
