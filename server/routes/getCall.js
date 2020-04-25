@@ -1,19 +1,13 @@
 // Receives a call confirmation from the SMS notification and tries to establish a connection
 
-const { VoiceResponse } = require('twilio').twiml;
-
 const Provider = require('../models/Provider');
 const Call = require('../models/Call');
 const getDate = require('../modules/getDate');
 const formatHTML = require('../modules/formatHTML');
 
-const {
-  NEBOTS_TWACCOUNTSID,
-  NEBOTS_TWAUTHTOKEN,
-  NEBOTS_SERVER,
-  NEBOTS_TWPROXYNUM
-} = process.env;
+const { NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN, NEBOTS_SERVER } = process.env;
 
+const { VoiceResponse } = require('twilio').twiml;
 const tw = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
 
 module.exports = async (req, res) => {
@@ -44,20 +38,21 @@ module.exports = async (req, res) => {
     }
 
     if (confirm) {
+      // Prepare twiml to call user that initiated the process
       const response = new VoiceResponse();
+      const twiml = response.dial(call.from);
 
-      const dial = response.dial({ callerId: NEBOTS_TWPROXYNUM });
-      dial.number(provider.phone);
+      // Call provider and apply twiml to call user back
+      tw.calls
+        .create({ to: provider.phone, from: NEBOTS_TWSMS, twiml })
+        .then(c => console.log(`${getDate()} - Establishing call`, c.sid));
 
-      tw.calls(call.callSid).update({ twiml: response.toString() });
-
+      // Delete from database
       Call.deleteOne({ _id: req.params.id }, () => {});
-
-      console.log(`${getDate()} - Establishing call`);
 
       return res.status(200).send(
         formatHTML({
-          title: `Thank you. If the user is still waiting we will forward you the call`
+          title: `Thank you. If the user is still waiting we will connect you`
         })
       );
     } else {
