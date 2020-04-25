@@ -4,7 +4,7 @@ module.exports = [
   {
     name: 'Windows',
     code: 'win',
-    synonyms: ['pc', 'microsoft', 'acer'],
+    synonyms: ['p.c.', 'microsoft', 'acer'],
     generic: ['computer', 'laptop'],
     related: [
       'mouse',
@@ -19,7 +19,7 @@ module.exports = [
       'website',
       'site',
       'browser',
-      'navigage',
+      'navigate',
       'internet',
       'connection'
     ]
@@ -58,6 +58,7 @@ module.exports = [
       'touchscreen',
       'signal',
       '3g',
+      'call',
       'line',
       'email',
       'gmail',
@@ -73,13 +74,14 @@ module.exports = [
     name: 'iOS',
     code: 'ios',
     synonyms: ['iphone', 'apple phone', 'ipad'],
-    generic: ['phone', 'cell phone', 'mobile', 'tablet'],
+    generic: ['phone', 'cell phone', 'mobile', 'tablet', 'ipod'],
     related: [
       'cellular',
       'data plan',
       'touchscreen',
       'signal',
       '3g',
+      'call',
       'line',
       'email',
       'gmail',
@@ -94,7 +96,7 @@ module.exports = [
   {
     name: 'TV',
     code: 'tvs',
-    synonyms: ['television'],
+    synonyms: ['television', 't.v.'],
     generic: [],
     related: ['channels', 'cable', 'netflix', 'hbo', 'antenna']
   },
