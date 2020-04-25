@@ -10,6 +10,7 @@ const postCall = require('./routes/postCall');
 const getCall = require('./routes/getCall');
 const ping = require('./routes/ping');
 const getDate = require('./modules/getDate');
+const postTranscription = require('./routes/postTranscription');
 
 require('dotenv').config();
 
