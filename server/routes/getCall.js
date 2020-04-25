@@ -63,11 +63,14 @@ module.exports = async (req, res) => {
     } else {
       console.log(`${getDate()} - Confirming call`);
       return res.status(200).send(
-        formatHTML(
-          `<a style="color:#003146" href="${NEBOTS_SERVER}/call/${call._id}?provider=${provider._id}&confirm=true">
-            Click here to confirm the call
-            </a>`
-        )
+        formatHTML({
+          title: 'Listen to the message to decide if you can help',
+          audio: call.recordingUrl,
+          link: {
+            url: `${NEBOTS_SERVER}/call/${call._id}?provider=${provider._id}&confirm=true`,
+            text: `Click here to confirm the call`
+          }
+        })
       );
     }
   } catch (error) {
