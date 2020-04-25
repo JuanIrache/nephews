@@ -5,7 +5,12 @@ const Call = require('../models/Call');
 const getDate = require('../modules/getDate');
 const formatHTML = require('../modules/formatHTML');
 
-const { NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN, NEBOTS_SERVER } = process.env;
+const {
+  NEBOTS_TWACCOUNTSID,
+  NEBOTS_TWAUTHTOKEN,
+  NEBOTS_SERVER,
+  NEBOTS_TWSMS
+} = process.env;
 
 const { VoiceResponse } = require('twilio').twiml;
 const tw = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
@@ -40,12 +45,14 @@ module.exports = async (req, res) => {
     if (confirm) {
       // Prepare twiml to call user that initiated the process
       const response = new VoiceResponse();
-      const twiml = response.dial(call.from);
+      response.dial(call.from);
+      const twiml = response.toString();
 
       // Call provider and apply twiml to call user back
       tw.calls
         .create({ to: provider.phone, from: NEBOTS_TWSMS, twiml })
-        .then(c => console.log(`${getDate()} - Establishing call`, c.sid));
+        .then(c => console.log(`${getDate()} - Establishing call`, c.sid))
+        .catch(e => console.error(`${getDate()} - Error establishing call`, e));
 
       // Delete from database
       Call.deleteOne({ _id: req.params.id }, () => {});
