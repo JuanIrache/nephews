@@ -4,6 +4,7 @@ const Call = require('../models/Call');
 const Provider = require('../models/Provider');
 const generateKey = require('../modules/generateKey');
 const getDate = require('../modules/getDate');
+const filterSkills = require('../modules/filterSkills');
 
 require('dotenv').config();
 
@@ -37,16 +38,22 @@ module.exports = async (req, res) => {
 
     // Find valid providers
 
-    const query = { valid: true };
+    const query = { $and: [{ valid: true }] };
+
+    let language, skills;
+    if (TranscriptionStatus === 'completed') {
+      language = 'eng';
+      // Filter skills based on transcription
+      skills = filterSkills(TranscriptionText);
+    }
 
     // To-Do, transcribe and interpret other languages
-    // If transcription failed, assume non-english and skip interpretation
-    if (TranscriptionStatus !== 'completed') query.languages = { $ne: 'eng' };
-    else {
-      query.languages = 'eng';
-      // Filter skills based on transcription
-      query.skills = filterSkills(TranscriptionText);
-    }
+    // If transcription failed, assume non-english for now
+    if (skills == null) language = null;
+    // Don't add nulls to query
+    else query.$and.push({ $or: skills.map(s => ({ skills: s })) });
+
+    if (language != null) query.$and.push({ languages: language });
 
     // Send sms to providers
     providers = await Provider.find(query).exec();
