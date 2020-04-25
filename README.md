@@ -36,9 +36,10 @@ This web-app consists of a Node.js back end using Express.js and a React.js fron
 
 1. Create a [Twilio](https://www.twilio.com/) account
 2. Purchase at least two phone numbers: One for receiving calls and sending SMS, one to use as a caller ID and hide the user's ID
-3. Prepare a [MongoDB](https://www.mongodb.com/) database
-4. Set up your environment variables in both front and back end
-5. Use NPM commands to run locally or deploy the service
+3. Configure your publicly available phone number with a Webhook that points to **your server url + /call** when calls come in
+4. Prepare a [MongoDB](https://www.mongodb.com/) database
+5. Set up your environment variables in both front and back end
+6. Use NPM commands to run locally or deploy the service
 
 ## Set up
 
