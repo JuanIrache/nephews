@@ -136,6 +136,7 @@ This template is open source and welcomes contributions.
 - Only validate sms after a short period of time
 - Bring back validation/confirmation keys
 - Allow provider to set busy or available times
+- Testing
 - Service quality monitoring (including recording calls with the necessary legal background)
 - Delete Call document when the client hangs up prematurely
 - Add real terms and conditions
