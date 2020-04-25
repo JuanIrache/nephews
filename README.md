@@ -23,13 +23,14 @@ This web-app consists of a Node.js back end using Express.js and a React.js fron
 
 ### Server API Routes
 
-| Route        | Method | Body/Query  | Result                                                                         |
-| ------------ | ------ | ----------- | ------------------------------------------------------------------------------ |
-| /provider    | POST   | provider    | Registers new providers (volunteers) and submits an SMS with a validation code |
-| /provider    | DELETE | provider id | Starts the deletion process                                                    |
-| /provider/id | GET    | action      | Confirms a previously started action (validate or delete)                      |
-| /call        | POST   | call        | Creates a call element and pushes an SMS notification to all providers         |
-| /call/id     | GET    | provider id | Accepts the call and forwards it to the provider                               |
+| Route          | Method | Body/Query    | Result                                                                         |
+| -------------- | ------ | ------------- | ------------------------------------------------------------------------------ |
+| /provider      | POST   | provider      | Registers new providers (volunteers) and submits an SMS with a validation code |
+| /provider      | DELETE | provider id   | Starts the deletion process                                                    |
+| /provider/id   | GET    | action        | Confirms a previously started action (validate or delete)                      |
+| /call          | POST   | call          | Creates a call element and pushes an SMS notification to all providers         |
+| /call/id       | GET    | provider id   | Accepts the call and forwards it to the provider                               |
+| /transcription | POST   | transcription | Tries to interpret a transcription to filter a call and notify providers       |
 
 ## How to use it
 

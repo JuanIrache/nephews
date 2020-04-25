@@ -62,6 +62,9 @@ app.get('/call/:id', getCall);
 //Check server status
 app.get('/ping', ping);
 
+// Receive transcription
+app.post('/transcription', postTranscription);
+
 app.listen(NEBOTS_PORT, () =>
   console.log(`${getDate()} - Listening on port ${NEBOTS_PORT}`)
 );

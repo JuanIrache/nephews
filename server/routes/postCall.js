@@ -55,7 +55,10 @@ module.exports = async (req, res) => {
 
     // Prepare response for Twilio
     const twiml = new VoiceResponse();
-    twiml.play({ loop: 20 }, NEBOTS_CLIENTURL + '/gracies.mp3');
+    twiml.play(NEBOTS_CLIENTURL + '/gracies.mp3');
+    response.record({
+      transcribeCallback: NEBOTS_SERVER + '/transcriptions'
+    });
 
     // Render the response as XML in reply to the webhook request
     res.type('text/xml');
