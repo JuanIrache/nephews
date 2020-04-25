@@ -132,12 +132,12 @@ This template is open source and welcomes contributions.
 ## To-Do
 
 - Customize mp3 response
-- Implement voice recognition to determine call language and topic
 - Let volunteers listen to need before accepting call
-- Only validate sms after a short period of time
-- Bring back validation/confirmation keys
-- Allow provider to set busy or available times
+- Recreate call between From and accepted provider
+- Update readme with new flow
 - Testing
+- Enhance validation/confirmation with time-limited keys
+- Allow provider to set busy or available times
 - Support additional languages in transcriptions
 - Use vocabulary databases and APIs to enhance topic filtering
 - Service quality monitoring (including recording calls with the necessary legal background)
