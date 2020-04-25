@@ -147,7 +147,7 @@ export default () => {
             ))}
           </div>
 
-          <div className="checkbox conditions">
+          <div className="Checkbox conditions">
             <input type="checkbox" name="conditions" id="conditions" required />
             <label htmlFor="conditions">
               Do you accept the{' '}
