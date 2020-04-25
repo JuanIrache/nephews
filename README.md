@@ -137,6 +137,8 @@ This template is open source and welcomes contributions.
 - Bring back validation/confirmation keys
 - Allow provider to set busy or available times
 - Testing
+- Support additional languages in transcriptions
+- Use vocabulary databases and APIs to enhance topic filtering
 - Service quality monitoring (including recording calls with the necessary legal background)
 - Delete Call document when the client hangs up prematurely
 - Add real terms and conditions
