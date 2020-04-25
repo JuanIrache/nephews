@@ -18,7 +18,8 @@ module.exports = async (req, res) => {
 
       // Record user question
       twiml.record({
-        transcribeCallback: NEBOTS_SERVER + '/transcription'
+        transcribeCallback: NEBOTS_SERVER + '/transcription',
+        maxLength: 30
       });
 
       // Render the response as XML in reply to the webhook request
