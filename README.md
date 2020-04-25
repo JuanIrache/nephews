@@ -53,19 +53,19 @@ You can copy `client/.env.local.example` and `server/.env.example` to `client/.e
 
 #### Server side (.env)
 
-| Config&nbsp;Value   | Description                                                                                                                   |
-| :------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
-| NEBOTS_CLIENTURL    | Public facing website URL                                                                                                     |
-| NEBOTS_PORT         | Port where the server should run                                                                                              |
-| NEBOTS_SERVER       | Server base URL                                                                                                               |
-| NEBOTS_ATLAS_USER   | Database user                                                                                                                 |
-| NEBOTS_ATLAS_PASS   | Database password                                                                                                             |
-| NEBOTS_ATLAS_SERVER | Database server                                                                                                               |
-| NEBOTS_ATLAS_DB     | Database name                                                                                                                 |
-| NEBOTS_TWACCOUNTSID | Your primary Twilio account identifier - find this [in the Console](https://www.twilio.com/console)                           |
-| NEBOTS_TWAUTHTOKEN  | Used to authenticate - [just like the above, you'll find this here](https://www.twilio.com/console)                           |
-| NEBOTS_TWSMS        | A Twilio phone capable of Voice and SMS - you can [get one here](https://www.twilio.com/console/phone-numbers/incoming)       |
-| NEBOTS_TWPROXYNUM   | A Twilio phone used capable of Voice to hide caller IDs [get one here](https://www.twilio.com/console/phone-numbers/incoming) |
+| Config&nbsp;Value   | Description                                                                                                             |
+| :------------------ | :---------------------------------------------------------------------------------------------------------------------- |
+| NEBOTS_CLIENTURL    | Public facing website URL                                                                                               |
+| NEBOTS_PORT         | Port where the server should run                                                                                        |
+| NEBOTS_SERVER       | Server base URL                                                                                                         |
+| NEBOTS_ATLAS_USER   | Database user                                                                                                           |
+| NEBOTS_ATLAS_PASS   | Database password                                                                                                       |
+| NEBOTS_ATLAS_SERVER | Database server                                                                                                         |
+| NEBOTS_ATLAS_DB     | Database name                                                                                                           |
+| NEBOTS_TWACCOUNTSID | Your primary Twilio account identifier - find this [in the Console](https://www.twilio.com/console)                     |
+| NEBOTS_TWAUTHTOKEN  | Used to authenticate - [just like the above, you'll find this here](https://www.twilio.com/console)                     |
+| NEBOTS_TWSMS        | A Twilio phone capable of Voice and SMS - you can [get one here](https://www.twilio.com/console/phone-numbers/incoming) |
+| NEBOTS_TWPROXYNUM   | A Twilio phone used capable of Voice to hide caller IDs                                                                 |
 
 #### Client side (.env.local)
 
