@@ -68,9 +68,14 @@ module.exports = async (req, res) => {
         ''
       );
 
-      console.log(body);
-      // tw.messages.create({ body, from: NEBOTS_TWSMS, to: provider.phone });
+      // console.log(body);
+      tw.messages.create({ body, from: NEBOTS_TWSMS, to: provider.phone });
     }
+    console.log(
+      `${getDate()} - Transcription processed. Language: ${language}, Skills: ${skills}. Contacted ${providers} providers`
+    );
+
+    return res.sendStatus(200);
   } catch (error) {
     console.error(`${getDate()} - Error saving Call: ${error.message}`);
     return res.sendStatus(500);
