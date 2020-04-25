@@ -109,6 +109,12 @@ npm install
 npm run deploy
 ```
 
+Alternatively, you can use this command to start the client in development mode. It will reload whenever you change any files.
+
+```bash
+npm start
+```
+
 5. Navigate to your deployment url
 
 ### Cloud deployment
