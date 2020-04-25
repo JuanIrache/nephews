@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var mSchema = new Schema({
   _id: String,
-  from: { type: String, required: true, unique: true }
+  from: { type: String, required: true, unique: true },
+  recordingUrl: { type: String, required: true }
 });
 
 module.exports = mongoose.model('Call', mSchema);

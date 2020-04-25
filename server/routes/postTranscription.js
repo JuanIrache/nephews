@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
     TranscriptionStatus,
     TranscriptionText,
     From: from,
-    RecordingUrl
+    RecordingUrl: recordingUrl
   } = req.body;
   try {
     // Create letters-only unique ID
@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
     // Delete if already existing
     await Call.deleteOne({ from }).exec();
 
-    await Call.create({ _id, from });
+    await Call.create({ _id, from, recordingUrl });
 
     // Find valid providers
 
