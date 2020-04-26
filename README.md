@@ -111,7 +111,7 @@ npm install
 npm start
 ```
 
-5. Navigate to your deployment url
+5. Navigate to your development url
 
 ### Cloud deployment
 
