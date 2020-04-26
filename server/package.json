@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon app.js",
     "build": "NODE_ENV=production forever start --id nephews --minUptime 1000 --spinSleepTime 1000 app.js",
-    "stop": "forever stop app.js"
+    "stop": "forever stop app.js",
+    "test": "jest"
   },
   "author": "Juan Irache Duesca",
   "license": "ISC",
@@ -19,5 +20,8 @@
     "nodemon": "^2.0.2",
     "phone": "^2.4.9",
     "twilio": "^3.42.1"
+  },
+  "devDependencies": {
+    "jest": "^25.4.0"
   }
 }
