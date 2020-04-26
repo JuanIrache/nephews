@@ -38,7 +38,7 @@ module.exports = transcription => {
 
   // If no matches, try with related terms
   skills.forEach(s => {
-    if (matchElement(s.generic, transcription)) filter.push(s.code);
+    if (matchElement(s.related, transcription)) filter.push(s.code);
   });
 
   if (filter.length) return filter;
