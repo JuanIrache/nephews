@@ -125,6 +125,15 @@ npm start
 
 5. Navigate to your deployment url
 
+### Local development
+
+You can test the backend modules like so:
+
+```bash
+cd server
+npm run test
+```
+
 ### Cloud deployment
 
 In order to make the website available to the public you might have to do some additional setup, for example using [Apache](https://httpd.apache.org/).
@@ -137,7 +146,6 @@ This template is open source and welcomes contributions.
 
 ## To-Do
 
-- Testing
 - Customize mp3 response
 - Enhance validation/confirmation with time-limited keys
 - Allow provider to set busy or available times
@@ -146,6 +154,7 @@ This template is open source and welcomes contributions.
 - Use vocabulary databases and APIs to enhance topic filtering
 - Service quality monitoring (including recording calls with the necessary legal background)
 - Potentially allow multiple calls per user
+- More comprehensive testing
 - Add real terms and conditions and legal docs
 - Authenticate webhook endpoint
 - Better error handling
