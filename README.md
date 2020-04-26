@@ -100,32 +100,38 @@ cd nephews
 ```bash
 cd server
 npm install
-npm run build
-```
-
-Alternatively, you can use this command to start the server in development mode. It will reload whenever you change any files.
-
-```bash
 npm start
 ```
 
-3. Install client dependencies and deploy
+3. Install client dependencies and start front end
 
 ```bash
 cd ../client
 npm install
-npm run deploy
-```
-
-Alternatively, you can use this command to start the client in development mode. It will reload whenever you change any files.
-
-```bash
 npm start
 ```
 
 5. Navigate to your deployment url
 
-### Local development
+### Cloud deployment
+
+2. Build the server and keep it running
+
+```bash
+cd server
+npm run build
+```
+
+3. Deploy front end
+
+```bash
+cd ../client
+npm run deploy
+```
+
+In order to make the website available to the public you might have to do some additional server setup, for example using [Apache](https://httpd.apache.org/). Check with your hosting provider.
+
+### Testing
 
 You can test the backend modules like so:
 
@@ -133,10 +139,6 @@ You can test the backend modules like so:
 cd server
 npm run test
 ```
-
-### Cloud deployment
-
-In order to make the website available to the public you might have to do some additional setup, for example using [Apache](https://httpd.apache.org/).
 
 ## Contributing
 
