@@ -77,7 +77,9 @@ module.exports = async (req, res) => {
 
     return res.sendStatus(200);
   } catch (error) {
-    console.error(`${getDate()} - Error saving Call: ${error.message}`);
+    console.error(
+      `${getDate()} - Error processing transcription: ${error.message}`
+    );
     return res.sendStatus(500);
   }
 };
