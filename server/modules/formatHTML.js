@@ -4,13 +4,14 @@ const bodyStyle = [
   `background-color: #ffcb5c`,
   `font-family: sans-serif`,
   `margin: 0`,
-  `min-height: 100%;`,
+  `min-height: 75%;`,
   `text-align: center`,
   `font-size: 120%`,
   `display: flex`,
   `flex-direction: column`,
   `justify-content: space-around`,
-  `align-items: center`
+  `align-items: center`,
+  `padding: 6rem`
 ];
 
 module.exports = ({ title, audio, link }) =>
