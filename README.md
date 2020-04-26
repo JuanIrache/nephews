@@ -6,11 +6,11 @@ Live demo: [nephews.tech](https://nephews.tech)
 
 ## About
 
-**nephews** creates a link between people that struggle with tech and volunteers that are willing to help them. For users, for example the elderly, **nephews** looks just like a phone number they can call in order to get help. For volunteers, it is just an online form they can sign up to. No need to install anything. When somebody needs help, the system will look for matching available volunteers, send them an SMS notification, and he who accepts the notification first will have the phone call redirected to them.
+**nephews** creates a link between people that struggle with tech and volunteers that are willing to help them. For users like the elderly, **nephews** looks just like a phone number they can call in order to get help. For volunteers, it is just an online form they can sign up to. No need to install anything. When somebody needs help, the system will look for matching available volunteers, send them an SMS notification, and he who accepts the notification first will have the phone call redirected to them.
 
 ### How it works
 
-This web-app consists of a Node.js back end using Express.js and a React.js front end. Twilio's Messaging API (SMS) is used for validation and deletion of accounts, and for availability confirmations. Twilio's Voice API is used to handle incoming calls and to generate new ones between users and volunteers while hiding the caller's identity.
+This web-app consists of a Node.js back end using Express.js and a React.js front end. Twilio's Messaging API (SMS) is used for validation and deletion of accounts, and for availability confirmations. Twilio's Voice API is used to handle incoming calls, to transcribe messages and to start new calls between users and volunteers, while hiding the caller's identity.
 
 1. User dials the **nephews** number
 2. User is asked to explain their problem while their message is recorded and transcribed
@@ -23,21 +23,21 @@ This web-app consists of a Node.js back end using Express.js and a React.js fron
 - Node.js web server using [Express.js](https://npm.im/express)
 - Simple call filtering module based on topics found in transcribed calls
 - Client website using modern [React.js](https://reactjs.org/) with hooks and SCSS styles
-- MongoDB database for storing user and call data, hosted in Atlas and accessed via Mongoose.
+- MongoDB database for storing user and call data, accessed via Mongoose
 - Phone number available for users in need of basic tech support
 - Registration form for volunteers, with accounts validated via SMS
 - Configurable environment variables using `.env` file in the server ([dotenv](https://www.npmjs.com/package/dotenv)) and `.env.local` in the front end.
 
-### Server API Routes
+### API Routes
 
-| Route          | Method | Body/Query    | Result                                                                                      |
-| -------------- | ------ | ------------- | ------------------------------------------------------------------------------------------- |
-| /provider      | POST   | provider      | Registers new providers (volunteers) and submits an SMS with a validation code              |
-| /provider      | DELETE | provider id   | Starts the deletion process                                                                 |
-| /provider/id   | GET    | action        | Confirms a previously started action (validate or delete)                                   |
-| /call          | POST   | call          | Handles an incoming call by providing instructions and starts recording and transcribing it |
-| /call/id       | GET    | provider id   | Starts a new call between a user and the provider who accepted the request                  |
-| /transcription | POST   | transcription | Tries to interpret a transcription to filter a call and notify providers by SMS             |
+| Route          | Method | Body/Query    | Result                                                                                     |
+| -------------- | ------ | ------------- | ------------------------------------------------------------------------------------------ |
+| /provider      | POST   | provider      | Registers a new provider (volunteer) and submits an SMS with a validation code             |
+| /provider      | DELETE | provider id   | Starts the provider deletion process                                                       |
+| /provider/id   | GET    | action        | Confirms a previously started action (validate or delete)                                  |
+| /call          | POST   | call          | Handles an incoming call, provides instructions and starts the recording and transcription |
+| /transcription | POST   | transcription | Tries to interpret a transcription to filter a call and notify providers by SMS            |
+| /call/id       | GET    | provider id   | Starts a new call between a user and the provider who accepted the request                 |
 
 ## How to use it
 
@@ -65,8 +65,8 @@ You can copy `client/.env.local.example` and `server/.env.example` to `client/.e
 | Config&nbsp;Value | Description                                                                                                             |
 | :---------------- | :---------------------------------------------------------------------------------------------------------------------- |
 | NES_CLIENTURL     | Public facing website URL                                                                                               |
+| NES_SERVER        | Server URL                                                                                                              |
 | NES_PORT          | Port where the server should run                                                                                        |
-| NES_SERVER        | Server base URL                                                                                                         |
 | NES_DBUSER        | Database user                                                                                                           |
 | NES_DBPASS        | Database password                                                                                                       |
 | NES_DBSERVER      | Database server                                                                                                         |
@@ -77,12 +77,12 @@ You can copy `client/.env.local.example` and `server/.env.example` to `client/.e
 
 #### Client side (.env.local)
 
-| Config&nbsp;Value | Description                          |
-| :---------------- | :----------------------------------- |
-| REACT_APP_SERVER  | Server base URL                      |
-| REACT_APP_ENV     | production or development mode       |
-| REACT_APP_DEPLOY  | Directory to deploy the website      |
-| REACT_APP_PHONE   | Formatted public-facing phone number |
+| Config&nbsp;Value | Description                            |
+| :---------------- | :------------------------------------- |
+| REACT_APP_SERVER  | Server URL                             |
+| REACT_APP_ENV     | **production** or **development** mode |
+| REACT_APP_DEPLOY  | Directory to deploy the website        |
+| REACT_APP_PHONE   | Public-facing phone number             |
 
 ### Local development
 
@@ -95,7 +95,7 @@ git clone git@github.com:juanirache/nephews.git
 cd nephews
 ```
 
-2. Install server dependencies and build
+2. Install server dependencies and start it
 
 ```bash
 cd server
@@ -152,7 +152,7 @@ This template is open source and welcomes contributions.
 - Enhance validation/confirmation with time-limited keys
 - Allow provider to set busy or available times
 - Support additional languages in transcriptions (with Gather)
-- Record relevant portion of call while using gather
+- Record relevant portion of call while using Gather
 - Use vocabulary databases and APIs to enhance topic filtering
 - Service quality monitoring (including recording calls with the necessary legal background)
 - Potentially allow multiple calls per user
