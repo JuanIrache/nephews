@@ -115,14 +115,14 @@ npm start
 
 ### Cloud deployment
 
-2. Build the server and keep it running
+1. Build the server and keep it running
 
 ```bash
 cd server
 npm run build
 ```
 
-3. Deploy front end
+2. Deploy front end
 
 ```bash
 cd ../client
