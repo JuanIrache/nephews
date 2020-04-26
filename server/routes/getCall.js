@@ -6,14 +6,14 @@ const getDate = require('../modules/getDate');
 const formatHTML = require('../modules/formatHTML');
 
 const {
-  NEBOTS_TWACCOUNTSID,
-  NEBOTS_TWAUTHTOKEN,
-  NEBOTS_SERVER,
-  NEBOTS_TWSMS
+  NES_TWACCOUNTSID,
+  NES_TWAUTHTOKEN,
+  NES_SERVER,
+  NES_TWNUMBER
 } = process.env;
 
 const { VoiceResponse } = require('twilio').twiml;
-const tw = require('twilio')(NEBOTS_TWACCOUNTSID, NEBOTS_TWAUTHTOKEN);
+const tw = require('twilio')(NES_TWACCOUNTSID, NES_TWAUTHTOKEN);
 
 module.exports = async (req, res) => {
   try {
@@ -50,7 +50,7 @@ module.exports = async (req, res) => {
 
       // Call provider and apply twiml to call user back
       tw.calls
-        .create({ to: provider.phone, from: NEBOTS_TWSMS, twiml })
+        .create({ to: provider.phone, from: NES_TWNUMBER, twiml })
         .then(c => console.log(`${getDate()} - Establishing call`, c.sid))
         .catch(e => console.error(`${getDate()} - Error establishing call`, e));
 
@@ -69,7 +69,7 @@ module.exports = async (req, res) => {
           title: 'Listen to the message to decide if you can help',
           audio: call.recordingUrl,
           link: {
-            url: `${NEBOTS_SERVER}/call/${call._id}?provider=${provider._id}&confirm=true`,
+            url: `${NES_SERVER}/call/${call._id}?provider=${provider._id}&confirm=true`,
             text: `Click here to confirm the call`
           }
         })

@@ -4,7 +4,7 @@ const Provider = require('../models/Provider');
 const getDate = require('../modules/getDate');
 const formatHTML = require('../modules/formatHTML');
 
-const { NEBOTS_SERVER } = process.env;
+const { NES_SERVER } = process.env;
 
 module.exports = async (req, res) => {
   try {
@@ -14,18 +14,16 @@ module.exports = async (req, res) => {
       const { confirm, action } = req.query;
       if (!confirm) {
         console.log(`${getDate()} - Confirming provider ${action}`);
-        return res
-          .status(200)
-          .send(
-            formatHTML({
-              link: {
-                text: `Click here to ${
-                  action === 'delete' ? 'delete' : 'validate'
-                } your account`,
-                url: `${NEBOTS_SERVER}/provider/${_id}?action=${action}&confirm=true`
-              }
-            })
-          );
+        return res.status(200).send(
+          formatHTML({
+            link: {
+              text: `Click here to ${
+                action === 'delete' ? 'delete' : 'validate'
+              } your account`,
+              url: `${NES_SERVER}/provider/${_id}?action=${action}&confirm=true`
+            }
+          })
+        );
       } else {
         switch (action) {
           case 'validate':

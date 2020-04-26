@@ -6,7 +6,7 @@ const getDate = require('../modules/getDate');
 
 require('dotenv').config();
 
-const { NEBOTS_SERVER, NEBOTS_CLIENTURL } = process.env;
+const { NES_SERVER, NES_CLIENTURL } = process.env;
 
 module.exports = async (req, res) => {
   try {
@@ -14,11 +14,11 @@ module.exports = async (req, res) => {
       // Prepare response for Twilio
       const twiml = new VoiceResponse();
       // Play welcome message
-      twiml.play(NEBOTS_CLIENTURL + '/gracies.mp3');
+      twiml.play(NES_CLIENTURL + '/gracies.mp3');
 
       // Record user question
       twiml.record({
-        transcribeCallback: NEBOTS_SERVER + '/transcription',
+        transcribeCallback: NES_SERVER + '/transcription',
         maxLength: 30
       });
 
