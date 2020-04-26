@@ -147,10 +147,10 @@ This template is open source and welcomes contributions.
 - Service quality monitoring (including recording calls with the necessary legal background)
 - Potentially allow multiple calls per user
 - Add real terms and conditions and legal docs
+- Authenticate webhook endpoint
 - Better error handling
 - Protect from brute force
 - Protect from smsing/calling wrong numbers
-- Authenticate webhook endpoint
 
 ## License
 
