@@ -137,7 +137,8 @@ This template is open source and welcomes contributions.
 - Probably rename NEBOTS_TWSMS variable and delete NEBOTS_TWPROXYNUM
 - Enhance validation/confirmation with time-limited keys
 - Allow provider to set busy or available times
-- Support additional languages in transcriptions
+- Support additional languages in transcriptions (with Gather)
+- Record relevant portion of call while using gather
 - Use vocabulary databases and APIs to enhance topic filtering
 - Service quality monitoring (including recording calls with the necessary legal background)
 - Potentially allow multiple calls per user
