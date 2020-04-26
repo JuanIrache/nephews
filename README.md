@@ -6,15 +6,22 @@ Live demo: [nephews.tech](https://nephews.tech)
 
 ## About
 
-**nephews** creates a link between people that struggle with tech and volunteers that are willing to help them. For users, for example the elderly, **nephews** looks just like a phone number they can call in order to get help. For volunteers, it is just an online form they can sign up to. No need to install anything. When somebody needs help, the system will look for a matching available volunteers, send them an SMS notification, and he who accepts the notification first will have the phone call redirected to them.
+**nephews** creates a link between people that struggle with tech and volunteers that are willing to help them. For users, for example the elderly, **nephews** looks just like a phone number they can call in order to get help. For volunteers, it is just an online form they can sign up to. No need to install anything. When somebody needs help, the system will look for matching available volunteers, send them an SMS notification, and he who accepts the notification first will have the phone call redirected to them.
 
 ### How it works
 
-This web-app consists of a Node.js back end using Express.js and a React.js front end. Twilio's Messaging API (SMS) is used for validation and deletion of accounts, and for call forwarding confirmation. Twilio's Voice API is used to redirect calls from users to volunteer while hiding the caller's identity.
+This web-app consists of a Node.js back end using Express.js and a React.js front end. Twilio's Messaging API (SMS) is used for validation and deletion of accounts, and for availability confirmations. Twilio's Voice API is used to handle incoming calls and to generate new ones between users and volunteers while hiding the caller's identity.
+
+1. User dials the **nephews** number
+2. User is asked to explain their problem while their message is recorded and transcribed
+3. The transcription is used to filter potential volunteers by language and topic
+4. Selected volunteers are notified by SMS. They can review the recorded message to decide if they can help
+5. When a volunteer confirms their availability, a new call is created between them and the user
 
 ## Features
 
 - Node.js web server using [Express.js](https://npm.im/express)
+- Simple call filtering module based on topics found in transcribed calls
 - Client website using modern [React.js](https://reactjs.org/) with hooks and SCSS styles
 - MongoDB database for storing user and call data, hosted in Atlas and accessed via Mongoose.
 - Phone number available for users in need of basic tech support
@@ -23,20 +30,20 @@ This web-app consists of a Node.js back end using Express.js and a React.js fron
 
 ### Server API Routes
 
-| Route          | Method | Body/Query    | Result                                                                         |
-| -------------- | ------ | ------------- | ------------------------------------------------------------------------------ |
-| /provider      | POST   | provider      | Registers new providers (volunteers) and submits an SMS with a validation code |
-| /provider      | DELETE | provider id   | Starts the deletion process                                                    |
-| /provider/id   | GET    | action        | Confirms a previously started action (validate or delete)                      |
-| /call          | POST   | call          | Creates a call element and pushes an SMS notification to all providers         |
-| /call/id       | GET    | provider id   | Accepts the call and forwards it to the provider                               |
-| /transcription | POST   | transcription | Tries to interpret a transcription to filter a call and notify providers       |
+| Route          | Method | Body/Query    | Result                                                                                      |
+| -------------- | ------ | ------------- | ------------------------------------------------------------------------------------------- |
+| /provider      | POST   | provider      | Registers new providers (volunteers) and submits an SMS with a validation code              |
+| /provider      | DELETE | provider id   | Starts the deletion process                                                                 |
+| /provider/id   | GET    | action        | Confirms a previously started action (validate or delete)                                   |
+| /call          | POST   | call          | Handles an incoming call by providing instructions and starts recording and transcribing it |
+| /call/id       | GET    | provider id   | Starts a new call between a user and the provider who accepted the request                  |
+| /transcription | POST   | transcription | Tries to interpret a transcription to filter a call and notify providers by SMS             |
 
 ## How to use it
 
 1. Create a [Twilio](https://www.twilio.com/) account
-2. Purchase at least two phone numbers: One for receiving calls and sending SMS, one to use as a caller ID and hide the user's ID
-3. Configure your publicly available phone number with a Webhook that points to **your server url + /call** when calls come in
+2. Purchase a phone number that can handle SMS anc Voice
+3. Configure your phone number with a Webhook that points to **your server url + /call** when calls come in
 4. Prepare a [MongoDB](https://www.mongodb.com/) database
 5. Set up your environment variables in both front and back end
 6. Use NPM commands to run locally or deploy the service
@@ -67,7 +74,6 @@ You can copy `client/.env.local.example` and `server/.env.example` to `client/.e
 | NEBOTS_TWACCOUNTSID | Your primary Twilio account identifier - find this [in the Console](https://www.twilio.com/console)                     |
 | NEBOTS_TWAUTHTOKEN  | Used to authenticate - [just like the above, you'll find this here](https://www.twilio.com/console)                     |
 | NEBOTS_TWSMS        | A Twilio phone capable of Voice and SMS - you can [get one here](https://www.twilio.com/console/phone-numbers/incoming) |
-| NEBOTS_TWPROXYNUM   | A Twilio phone used capable of Voice to hide caller IDs                                                                 |
 
 #### Client side (.env.local)
 
@@ -131,7 +137,6 @@ This template is open source and welcomes contributions.
 
 ## To-Do
 
-- Update readme with new flow
 - Testing
 - Customize mp3 response
 - Probably rename NEBOTS_TWSMS variable and delete NEBOTS_TWPROXYNUM
