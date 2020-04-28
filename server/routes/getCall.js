@@ -63,7 +63,7 @@ module.exports = async (req, res) => {
         })
       );
     } else {
-      console.log(`${getDate()} - Confirming call`);
+      console.log(`${getDate()} - Asking for call confirmation`);
       return res.status(200).send(
         formatHTML({
           title: 'Listen to the message to decide if you can help',

@@ -13,7 +13,9 @@ module.exports = async (req, res) => {
     if (provider) {
       const { confirm, action } = req.query;
       if (!confirm) {
-        console.log(`${getDate()} - Confirming provider ${action}`);
+        console.log(
+          `${getDate()} - Asking for provider ${action} confirmation`
+        );
         return res.status(200).send(
           formatHTML({
             link: {
