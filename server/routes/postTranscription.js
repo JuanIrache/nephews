@@ -72,7 +72,9 @@ module.exports = async (req, res) => {
       tw.messages.create({ body, from: NES_TWNUMBER, to: provider.phone });
     }
     console.log(
-      `${getDate()} - Transcription processed. Language: ${language}, Skills: ${skills}. Contacted ${providers} providers`
+      `${getDate()} - Transcription processed. Language: ${language}, Skills: ${skills}. Contacted ${
+        providers.length
+      } providers`
     );
 
     return res.sendStatus(200);
