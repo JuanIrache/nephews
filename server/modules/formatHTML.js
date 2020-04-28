@@ -4,7 +4,7 @@ const bodyStyle = [
   `background-color: #ffcb5c`,
   `font-family: sans-serif`,
   `margin: 0`,
-  `min-height: 75%;`,
+  `height: 70vh`,
   `text-align: center`,
   `font-size: 120%`,
   `display: flex`,
