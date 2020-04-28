@@ -10,17 +10,18 @@ const postCall = require('./routes/postCall');
 const getCall = require('./routes/getCall');
 const ping = require('./routes/ping');
 const getDate = require('./modules/getDate');
+const postTranscription = require('./routes/postTranscription');
 
 require('dotenv').config();
 
 const {
-  NEBOTS_PORT,
-  NEBOTS_CLIENTURL,
+  NES_PORT,
+  NES_CLIENTURL,
   NODE_ENV,
-  NEBOTS_ATLAS_USER,
-  NEBOTS_ATLAS_PASS,
-  NEBOTS_ATLAS_SERVER,
-  NEBOTS_ATLAS_DB
+  NES_DBUSER,
+  NES_DBPASS,
+  NES_DBSERVER,
+  NES_DBNAME
 } = process.env;
 
 // Parse incoming POST params with Express middleware
@@ -28,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 mongoose.connect(
-  `mongodb+srv://${NEBOTS_ATLAS_USER}:${NEBOTS_ATLAS_PASS}@${NEBOTS_ATLAS_SERVER}/${NEBOTS_ATLAS_DB}?retryWrites=true&w=majority`,
+  `mongodb+srv://${NES_DBUSER}:${NES_DBPASS}@${NES_DBSERVER}/${NES_DBNAME}?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -39,7 +40,7 @@ mongoose.connect(
 
 const corsOptions =
   NODE_ENV === 'production'
-    ? { origin: NEBOTS_CLIENTURL, optionsSuccessStatus: 200 }
+    ? { origin: NES_CLIENTURL, optionsSuccessStatus: 200 }
     : {};
 
 app.use(cors(corsOptions));
@@ -65,6 +66,6 @@ app.get('/ping', ping);
 // Receive transcription
 app.post('/transcription', postTranscription);
 
-app.listen(NEBOTS_PORT, () =>
-  console.log(`${getDate()} - Listening on port ${NEBOTS_PORT}`)
+app.listen(NES_PORT, () =>
+  console.log(`${getDate()} - Listening on port ${NES_PORT}`)
 );
