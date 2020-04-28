@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 
 import '../style/Clients.scss';
 
+const { REACT_APP_PHONE } = process.env;
+
 export default () => (
   <div className="Client">
     <div className="client-content">
       Call
       <a href={`tel:${process.env.REACT_APP_PHONE}`} className="number">
-        {process.env.REACT_APP_PHONE}
+        {REACT_APP_PHONE}
       </a>
     </div>
     <Link to="/about">
