@@ -55,7 +55,7 @@ module.exports = async (req, res) => {
 
     // Prepare response for Twilio
     const twiml = new VoiceResponse();
-    twiml.play(NEBOTS_CLIENTURL + '/gracies.mp3');
+    twiml.play(NEBOTS_CLIENTURL + '/thankyou.mp3');
     response.record({
       transcribeCallback: NEBOTS_SERVER + '/transcriptions'
     });
