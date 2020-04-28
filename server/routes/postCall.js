@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
       // Prepare response for Twilio
       const twiml = new VoiceResponse();
       // Play welcome message
-      twiml.play(NES_CLIENTURL + '/gracies.mp3');
+      twiml.play(NES_CLIENTURL + '/welcome.mp3');
 
       // Record user question
       twiml.record({
