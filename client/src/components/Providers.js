@@ -159,7 +159,9 @@ export default () => {
           </div>
           <input type="submit" value="Sign up" />
           {result === 'fail' && (
-            <p className="danger">Error communicating with server</p>
+            <p className="danger">
+              Something went wrong. Please check if your data is correct
+            </p>
           )}
         </form>
       ) : (
