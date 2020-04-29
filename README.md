@@ -67,8 +67,8 @@ You can copy `client/.env.local.example` and `server/.env.example` to `client/.e
 | Config&nbsp;Value | Description                                                                                                             |
 | :---------------- | :---------------------------------------------------------------------------------------------------------------------- |
 | NES_CLIENTURL     | Public facing website URL                                                                                               |
-| NES_SERVER        | Server URL                                                                                                              |
 | NES_PORT          | Port where the server should run                                                                                        |
+| NES_SERVER        | Server URL (including :port if needed)                                                                                  |
 | NES_DBUSER        | Database user                                                                                                           |
 | NES_DBPASS        | Database password                                                                                                       |
 | NES_DBSERVER      | Database server                                                                                                         |
@@ -81,7 +81,7 @@ You can copy `client/.env.local.example` and `server/.env.example` to `client/.e
 
 | Config&nbsp;Value | Description                            |
 | :---------------- | :------------------------------------- |
-| REACT_APP_SERVER  | Server URL                             |
+| REACT_APP_SERVER  | Server URL (including :port if needed) |
 | REACT_APP_ENV     | **production** or **development** mode |
 | REACT_APP_DEPLOY  | Directory to deploy the website        |
 | REACT_APP_PHONE   | Public-facing phone number             |
