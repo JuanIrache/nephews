@@ -100,11 +100,13 @@ export default () => {
                 required
               >
                 <option key="n" value=""></option>
-                {Object.keys(cpp).map(k => (
-                  <option key={cpp[k].iso3} value={cpp[k].iso3}>
-                    {k + ' ' + cpp[k].prefix}
-                  </option>
-                ))}
+                {Object.keys(cpp)
+                  .sort()
+                  .map(k => (
+                    <option key={cpp[k].iso3} value={cpp[k].iso3}>
+                      {k + ' ' + cpp[k].prefix}
+                    </option>
+                  ))}
               </select>
             </div>
 
